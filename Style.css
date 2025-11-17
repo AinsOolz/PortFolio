@@ -1,0 +1,12 @@
+body {
+    background-image: url('Image/WoodBG.png ');
+    background-size: 900px 1000px;
+    background-repeat: repeat;
+    background-position: top left;
+}
+.custom-BG {
+    background-image: url('./Image/NavBarBG.png');
+    background-size: 1700px 800px;
+    background-repeat: repeat;
+    background-position: center;
+}
