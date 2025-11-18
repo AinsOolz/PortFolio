@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-  
+
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="Style.css">
 
 
@@ -30,10 +31,10 @@
 <body>
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark custom-BG">
-    
+
     <!-- Logo with spacing from the left -->
     <a class="navbar-brand d-flex align-items-center ms-3" href="#">
-      <img src="./Image/Navbar_Logo.png" alt="Logo" width="95" height="85" class="me-1">
+      <img src="./Image/Navbar_Logo.png" alt="Logo" width="97" height="85" class="me-1">
     </a>
 
     <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -43,13 +44,38 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <!-- Slight spacing between logo and nav links -->
       <ul class="navbar-nav ms-2">
-        <li class="nav-item"><a class="nav-link active" href="#">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="Project.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
       </ul>
     </div>
 
   </nav>
+
+
+
+
+  <!-- Hero Section -->
+  <section class="hero d-flex align-items-center">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+
+        <!-- Left: Text Box -->
+        <div class="col-md-6 p-5">
+          <div class="hero-box">
+            <h1 class="hero-title">Welcome to My Portfolio</h1>
+            <p class="hero-subtitle">Showcasing my projects, ideas, and adventures in design and development.</p>
+          </div>
+        </div>
+
+        <!-- Right: Logo -->
+        <div class="col-md-6 text-center">
+          <img src="./Image/Navbar_Logo.png" alt="Logo" class="hero-logo">
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
 </body>

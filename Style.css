@@ -1,7 +1,7 @@
 body {
-    background-image: url('Image/WoodBG.png ');
-    background-size: 900px 1000px;
-    background-repeat: repeat;
+    background-image: url('Image/WoodBG3.png ');
+    background-size: 1800px 1000px;
+    background-repeat: no-repeat;
     background-position: top left;
 }
 .custom-BG {
@@ -10,3 +10,40 @@ body {
     background-repeat: repeat;
     background-position: center;
 }
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-box {
+    margin-left: 70px;
+    margin-bottom: 170px;
+    background: rgba(243, 229, 171, 0.6);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.2);
+    backdrop-filter: blur(3px); 
+    max-width: 85%;
+    /* opacity: 0.6; */
+}
+
+.hero-title {
+    font-family: "Libre Baskerville", serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.25rem;
+}
+  
+.hero-logo {
+    width: 75%;
+    max-width: 500px;
+    height: auto;
+}
+
+
