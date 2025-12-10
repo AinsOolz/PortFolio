@@ -15,6 +15,11 @@ body {
     background-position: center;
 }
 
+
+
+
+
+
 .navbar .nav-link {
     color: #FFF8D6;  /* Moved from Landing.html */
     transition: all 0.3s ease; /* Smooth transition */
@@ -28,6 +33,12 @@ body {
     background-color: rgba(51, 33, 28, 1); /* Background color with transparency */
     color: #FFF8D6; /* Keep text color unchanged on hover */
 }
+
+
+
+
+
+
 
 /* overlap: about-box sits partially behind the image on large screens */
 .image-wrapper {
@@ -107,4 +118,177 @@ body {
 /* small-screen cap to avoid overflow */
 @media (max-width: 420px) {
   .greeting { font-size: 48px; }
+}
+
+
+
+
+
+
+.vert-box {
+  background-color: rgba(51,33,28,1);
+  border: 5px solid #000;
+  color: #FFF8D6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1; /* THIS is important */
+}
+
+.horz-box {
+  background-color: rgba(51,33,28,0.75);
+  border: 5px solid #000;
+  color: #FFF8D6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1; /* THIS makes each horizontal box half of the vertical box */
+}
+
+
+/* Allow the Profile Image to slip under the vertical box */
+.profile-wrapper {
+  position: relative;
+  z-index: 1; /* behind vertical box */
+}
+
+.vert-box {
+  position: relative;
+  z-index: 3; /* above image */
+}
+
+/* Expand profile image into the vertical box’s space */
+@media (min-width: 992px) {
+  .profile-wrapper {
+    margin-right: -80px; /* pulls image under the vertical box */
+
+  }
+
+  .new-side-image {
+    width: calc(100% + 80px); /* visually extend into next column */
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+    border: 5px solid #000;;
+  }
+
+  .equal-height {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .center-to-image {
+    display: flex;
+    align-items: center; /* <— centres all columns vertically */
+  }
+}
+.project-box {
+  background-color: rgba(51,33,28,0.8);
+  border: 5px solid #000;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%; /* stretches the box full width */
+  box-sizing: border-box; /* ensures padding is included in width */
+}
+
+
+
+
+
+
+
+
+
+
+/* OUTER BOX */
+.project-box {
+  background-color: rgba(51,33,28,0.8);
+  border: 5px solid #000;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* INNER CONTENT: reduces padding from container edges */
+.project-content {
+  padding: 20px; /* adjust as needed to bring content closer to edges */
+}
+
+/* Align number and topic */
+.d-flex.align-items-baseline {
+  gap: 200px; /* spacing between number and topic */
+  align-items: baseline; /* aligns the bottom of the text with the number */
+}
+
+/* Topic number styling */
+.topic-number {
+  font-family: 'Knewave', cursive;
+  font-size: 96px; /* large number */
+  color: #FFF8D6;
+  width: 120px;          /* fixed width to align neatly */
+  text-align: right;
+  flex-shrink: 0;
+  line-height: 1;       /* ensures bottom aligns exactly */
+}
+
+/* Topic title */
+.topic-title {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+  color: #FFF8D6;
+  font-size: 2rem;       /* adjust as needed */
+  flex: 1;               /* takes remaining space */
+  line-height: 1;        /* align baseline with number */
+}
+
+/* Short description under topic */
+.topic-short-desc {
+  font-family: 'Libre Baskerville', serif;
+  color: #FFF8D6;
+  font-size: 1rem;
+  margin-bottom: 2rem; /* spacing before bottom paragraph */
+}
+
+/* Bottom paragraph */
+.topic-featured p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px;
+  color: #FFF8D6;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Featured Image Container */
+.col-12.col-lg-6.d-flex.justify-content-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start; /* aligns top with left column */
+}
+
+/* Fixed-size featured image */
+.featured-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 40px;
+  display: block;
+  border: 5px solid #000;
+}
+
+/* Ensure left column matches the featured image height */
+.col-12.col-lg-6.d-flex.flex-column.justify-content-between {
+  height: 500px; /* same as .featured-img height */
+}
+.img-wrapper {
+  display: flex;
+  align-items: flex-start; /* aligns top with left column */
+}
+
+.topic-thumb {
+  width: 100%;       /* fixed width */
+  height: 300px;      /* fixed height */
+  object-fit: cover;  /* maintains aspect ratio and crops if needed */
+  border-radius: 10px;
+  display: inline-block;
+  margin: 0 auto;     /* center on small screens */
 }

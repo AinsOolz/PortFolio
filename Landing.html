@@ -19,7 +19,7 @@
 
 <body>
   <!--Navbar-->
-  <nav class="navbar navbar-expand-lg custom-BG">
+  <nav class="navbar navbar-expand-lg custom-BG fixed-top">
     <!-- Logo with spacing from the left -->
     <a class="navbar-brand d-flex align-items-center ms-3" href="#">
       <img src="./Image/Navbar_Logo.png" alt="Logo" width="97" height="85" class="me-1">
@@ -38,6 +38,8 @@
       </ul>
     </div>
   </nav>
+  <br>
+  <br>
 
   <div class="container py-5">
     <div class="row g-0 align-items-stretch"> <!-- make row height = tallest column -->
@@ -122,6 +124,343 @@
       if (img && !img.complete) img.addEventListener('load', alignAboutToImage);
     }());
   </script>
+
+  </div> <!-- end existing container -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <!-- NEW: Boxes section -->
+  <div class="container py-4">
+    <div class="row g-3 center-to-image">
+      <!-- LEFT COLUMN: ProfileImage -->
+      <div class="col-12 col-lg-4 position-relative">
+        <div class="profile-wrapper">
+          <img src="./Image/ProfileImage.jpg" class="img-fluid new-side-image">
+        </div>
+      </div>
+
+
+      <!-- CENTER COLUMN: Vertical Box -->
+      <div class="col-12 col-lg-2 equal-height">
+        <div class="vert-box p-3 h-100">
+
+          <!-- Section Title -->
+          <h5 class="text-center mb-4">SKILLS</h5>
+
+          <!-- First icon/text pair -->
+          <div class="d-flex align-items-center mb-5">
+            <img src="./Image/Adobe Photoshop.png" class="vert-icon me-0" alt="Photoshop Icon">
+            <div>
+              <p class="mb-0">Photoshop</p>
+            </div>
+          </div>
+
+          <!-- Second icon/text pair -->
+          <div class="d-flex align-items-center mb-5">
+            <img src="./Image/Adobe Illustrator.png" class="vert-icon me-0" alt="Illustrator Icon">
+            <div>
+              <p class="mb-0">Illustrator</p>
+            </div>
+          </div>
+
+          <!-- Third icon/text pair -->
+          <div class="d-flex align-items-center mb-5">
+            <img src="./Image/Blender 3D.png" class="vert-icon me-4" alt="XD Icon">
+            <div>
+              <p class="mb-0">Blender</p>
+            </div>
+          </div>
+
+          <!-- Fourth icon/text pair -->
+          <div class="d-flex align-items-center mb-5">
+            <img src="./Image/Visual Studio Code 2019.png" class="vert-icon me-0" alt="XD Icon">
+            <div>
+              <p class="mb-0">Programming Fundamental</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Stacked Horizontal Boxes -->
+      <div class="col-12 col-lg-6 equal-height">
+        <div class="row g-3 flex-grow-1 d-flex flex-column">
+          <div class="col-12 flex-fill">
+            <div class="horz-box p-3 h-100">
+              <h6 class="mb-1">Horizontal Box A</h6>
+              <p class="mb-0">Short content A.</p>
+            </div>
+          </div>
+          <div class="col-12 flex-fill">
+            <div class="horz-box p-3 h-100">
+              <h6 class="mb-1">Horizontal Box B</h6>
+              <p class="mb-0">Short content B.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECOND ROW: ProfileImage extends under Vertical Box -->
+    <div class="row g-3 mt-3">
+      <!-- empty column for vertical box alignment -->
+      <div class="col-lg-4"></div>
+      <div class="col-lg-2"></div>
+      <!-- This column holds the bottom part of the ProfileImage -->
+      <div class="col-lg-6">
+        <!-- optional content or can leave blank if image already covers -->
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="project-box">
+    <div class="project-content">
+      <div class="row g-4 align-items-start">
+        <!-- Left column -->
+        <div class="col-12 col-lg-6 d-flex flex-column justify-content-between" style="height: 450px;">
+          <div>
+            <div class="d-flex align-items-baseline mb-3">
+              <div class="topic-number">/01/</div>
+              <div class="d-flex flex-column ms-3">
+                <div class="topic-title">WEB DESIGN</div>
+                <div class="topic-short-desc mt-1">
+                  Travelly - Hotel Booking
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="topic-featured">
+            <p>
+              This project was undertaken as part of one of my modules at Republic Polytechnic, where my team and I were
+              tasked with developing a website of our choice. The requirements included implementing user registration
+              and login features, along with role-based functionalities for both administrators and standard users. For
+              our project, we chose to create Travelly, a hotel-booking platform designed to offer a seamless and
+              intuitive experience.
+            </p>
+            <p>&nbsp;</p>
+            <p>
+              In such collaborative work, understanding one’s role and coordinating effectively with team members
+              becomes essential. Each individual’s contribution must integrate harmoniously with the others, ensuring
+              that separate functions operate as a cohesive whole. It is important to support one another throughout the
+              process, while also remaining responsible for one’s own assigned tasks.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right column: Featured Image -->
+        <div class="col-12 col-lg-6 d-flex">
+          <div class="img-wrapper flex-grow-1">
+            <img src="./Image/Travelly01.png" class="featured-img" alt="Featured Image">
+          </div>
+        </div>
+
+        <!-- Bottom row: small images -->
+        <div class="row g-3 mt-4 text-center text-lg-start">
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/Travelly02.png" class="topic-thumb" alt="Image 1">
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/Travelly03.png" class="topic-thumb" alt="Image 2">
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/Travelly04.png" class="topic-thumb" alt="Image 3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="project-box">
+    <div class="project-content">
+      <div class="row g-4 align-items-start">
+        <!-- Left column -->
+        <div class="col-12 col-lg-6 d-flex flex-column justify-content-between" style="height: 450px;">
+          <div>
+            <div class="d-flex align-items-baseline mb-3">
+              <div class="topic-number">/02/</div>
+              <div class="d-flex flex-column ms-3">
+                <div class="topic-title">DESIGN FUNDAMENTAL</div>
+                <div class="topic-short-desc mt-1">
+                  Study on the Fundamentals of Design
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="topic-featured">
+            <p>
+              This collection showcases the work I produced while studying the fundamentals of design at Republic
+              Polytechnic. It includes logo explorations, typographic studies, moodboards, and experiments with
+              AI-assisted design tools available in software such as Adobe Illustrator and Photoshop—demonstrating both
+              the creation of AI-generated elements and the techniques used to refine and adapt them.
+            </p>
+            <p>&nbsp;</p>
+            <p>
+              The experience proved truly illuminating, offering a broad introduction to the many mediums and
+              disciplines a designer must be well-versed in—ranging from typography to emerging AI technologies.
+              Throughout my studies, I found great enthusiasm in discovering new forms of creative expression, and I
+              remain eager to continue expanding my skills, embracing future tools and methods with an open and curious
+              mind.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right column: Featured Image -->
+        <div class="col-12 col-lg-6 d-flex">
+          <div class="img-wrapper flex-grow-1">
+            <img src="./Image/DesignFun01.png" class="featured-img" alt="Featured Image">
+          </div>
+        </div>
+
+        <!-- Bottom row: small images -->
+        <div class="row g-3 mt-4 text-center text-lg-start">
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/DesignFun02.png" class="topic-thumb" alt="Image 1">
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/DesignFun03.png" class="topic-thumb" alt="Image 2">
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/DesignFun04.png" class="topic-thumb" alt="Image 3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="project-box">
+    <div class="project-content">
+      <div class="row g-4 align-items-start">
+        <!-- Left column -->
+        <div class="col-12 col-lg-6 d-flex flex-column justify-content-between" style="height: 450px;">
+          <div>
+            <div class="d-flex align-items-baseline mb-3">
+              <div class="topic-number">/03/</div>
+              <div class="d-flex flex-column ms-3">
+                <div class="topic-title">IMMERSIVE TECHNOLOGY</div>
+                <div class="topic-short-desc mt-1">
+                  Diving into VR - Baker’s Bizarre Bake-Off
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="topic-featured">
+            <p>
+              This project is a VR experience I developed for my final assessment in Immersive Technology. The task
+              required the creation of an “escape room”-style environment featuring four distinct puzzles, all built
+              around a theme of my choosing. I elected to design a whimsical, fantasy-inspired baking adventure,
+              complete with a rotating puzzle, several logic challenges, and a finale in which the player concludes the
+              experience by baking a magical cake.
+            </p>
+            <p>&nbsp;</p>
+            <p>
+              It proved to be an unexpectedly adventurous foray into virtual reality. Throughout the module, I had to
+              adapt to a development process far removed from my usual comfort zone, building a functional game from the
+              ground up with limited time and resources. Though the journey was demanding, it ultimately strengthened my
+              ability to adjust swiftly and effectively when confronted with unfamiliar challenges.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right column: Featured Image -->
+        <div class="col-12 col-lg-6 d-flex">
+          <div class="img-wrapper flex-grow-1">
+            <img src="./Image/VR01.png" class="featured-img" alt="Featured Image">
+          </div>
+        </div>
+
+        <!-- Bottom row: small images -->
+        <div class="row g-3 mt-4 text-center text-lg-start">
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/VR02.png" class="topic-thumb" alt="Image 1">
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/VR03.png" class="topic-thumb" alt="Image 2">
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/VR04.png" class="topic-thumb" alt="Image 3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="project-box">
+    <div class="project-content">
+      <div class="row g-4 align-items-start">
+        <!-- Left column -->
+        <div class="col-12 col-lg-6 d-flex flex-column justify-content-between" style="height: 450px;">
+          <div>
+            <div class="d-flex align-items-baseline mb-3">
+              <div class="topic-number">/04/</div>
+              <div class="d-flex flex-column ms-3">
+                <div class="topic-title">MOBILE APP DEVELOPMENT</div>
+                <div class="topic-short-desc mt-1">
+                  Steps into Mobile Development
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="topic-featured">
+            <p>
+              This collection presents my work in mobile application development, completed as part of one of my modules
+              at Republic Polytechnic. Over the course of the module, I explored a diverse range of app concepts,
+              including an income and expense tracker, a 3D model catalogue, and even a Pokémon-themed quiz—each
+              offering its own set of creative and technical challenges.
+            </p>
+            <p>&nbsp;</p>
+            <p>
+              Drawing upon the adaptability I developed during my earlier venture into VR, I approached mobile
+              development with greater confidence and readiness to learn. This module broadened my familiarity with
+              various programming languages and provided valuable insight into the wider landscape of app creation,
+              further enriching my journey as a growing developer.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right column: Featured Image -->
+        <div class="col-12 col-lg-6 d-flex">
+          <div class="img-wrapper flex-grow-1">
+            <img src="./Image/Mob01.png" class="featured-img" alt="Featured Image">
+          </div>
+        </div>
+
+        <!-- Bottom row: small images -->
+        <div class="row g-3 mt-4 text-center text-lg-start">
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/Mob02.png" class="topic-thumb" alt="Image 1">
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/Mob03.png" class="topic-thumb" alt="Image 2">
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <img src="./Image/Mob04.png" class="topic-thumb" alt="Image 3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </body>
 
 </html>
