@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet"> <!-- added Knewave -->
   <link rel="stylesheet" href="Style.css">
 
 
@@ -15,23 +15,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- LibreBaskerVille font import-->
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-
-  <!--Styles-->
-  <style>
-    .navbar-nav .nav-link {
-      font-family: "Libre Baskerville", serif;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-  </style>
 </head>
 
 <body>
   <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark custom-BG">
-
+  <nav class="navbar navbar-expand-lg custom-BG">
     <!-- Logo with spacing from the left -->
     <a class="navbar-brand d-flex align-items-center ms-3" href="#">
       <img src="./Image/Navbar_Logo.png" alt="Logo" width="97" height="85" class="me-1">
@@ -43,41 +31,97 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <!-- Slight spacing between logo and nav links -->
-      <ul class="navbar-nav ms-2">
-        <li class="nav-item"><a class="nav-link active" href="Project.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+      <ul class="navbar-nav ms-3">
+        <li class="nav-item"><a class="nav-link" href="Project.html">PROJECTS</a></li>
+        <li class="nav-item"><a class="nav-link" href="About.html">ACTIVITIES</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.html">ABOUT</a></li>
       </ul>
     </div>
-
   </nav>
 
+  <div class="container py-5">
+    <div class="row g-0 align-items-stretch"> <!-- make row height = tallest column -->
+      <!-- LEFT: Image with Greeting -->
+      <div class="col-lg-6 d-flex flex-column align-items-center h-100"> <!-- full-height left column -->
+        <!-- Greeting -->
+        <h1 class="fw-normal mb-0 greeting">
+          Hello!
+        </h1>
 
+        <div class="image-wrapper">
+          <img id="bodyLogo" src="./Image/Body_Logo.png" alt="Logo" class="img-fluid body-logo">
+        </div>
+      </div>
 
+      <!-- RIGHT: About + Contact in Box -->
+      <div class="col-lg-6 d-flex align-items-center h-100"> <!-- full-height right column, centers box vertically -->
+        <div id="aboutBox" class="about-box rounded-4 p-5" style="padding-top: 0; padding-bottom: 0;">
+          <!-- About Text -->
+          <p class="fs-6 fw-normal mb-4" style="margin-left: 20px;">
+            Greetings. My name is Khairul, and I am studying Digital Design and Development at Republic Polytechnic.
+            I consider myself a dedicated and driven individual who welcomes new challenges and experiences.
+            I enjoy working with others and take pride in being an adaptable and dependable team player.
+          </p>
 
-  <!-- Hero Section -->
-  <section class="hero d-flex align-items-center">
-    <div class="container-fluid">
-      <div class="row align-items-center">
+          <!-- Add padding for spacing -->
+          <div style="padding-bottom: 40px;"></div>
 
-        <!-- Left: Text Box -->
-        <div class="col-md-6 p-5">
-          <div class="hero-box">
-            <h1 class="hero-title">Welcome to My Portfolio</h1>
-            <p class="hero-subtitle">Showcasing my projects, ideas, and adventures in design and development.</p>
+          <!-- Contact Section -->
+          <div class="mt-4">
+            <!-- Contact 1 -->
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img src="./Image/InstagramCircle.png" alt="Social Icon" class="img-fluid contact-icon">
+              <p class="m-0 fs-6">
+                @AinsOol
+              </p>
+            </div>
+
+            <!-- Contact 2 -->
+            <div class="d-flex align-items-center gap-3">
+              <img src="./Image/Google Plus.png" alt="Email Icon" class="img-fluid contact-icon">
+              <p class="m-0 fs-6">
+                wickedwizard008@gmail.com
+              </p>
+            </div>
           </div>
         </div>
-
-        <!-- Right: Logo -->
-        <div class="col-md-6 text-center">
-          <img src="./Image/Navbar_Logo.png" alt="Logo" class="hero-logo">
-        </div>
-
       </div>
     </div>
-  </section>
+  </div>
 
+  <!-- add script to align about-box center with image center -->
+  <script>
+    (function () {
+      var img = document.getElementById('bodyLogo');
+      var box = document.getElementById('aboutBox');
+      var extraOffset = -25; /* move box up by 100px */
 
+      function alignAboutToImage() {
+        if (!img || !box) return;
+        // reset previous transform so measurements are accurate
+        box.style.transform = '';
+
+        var imgRect = img.getBoundingClientRect();
+        var boxRect = box.getBoundingClientRect();
+
+        // compute center positions (viewport coordinates)
+        var imgCenter = imgRect.top + imgRect.height / 2;
+        var boxCenter = boxRect.top + boxRect.height / 2;
+        var delta = imgCenter - boxCenter;
+
+        // apply vertical shift via transform (non-layout-affecting) and include extra offset
+        box.style.transform = 'translateY(' + (delta + extraOffset) + 'px)';
+      }
+
+      // run on load / resize / image load
+      window.addEventListener('load', alignAboutToImage);
+      window.addEventListener('resize', function () {
+        if (box) box.style.transform = '';
+        alignAboutToImage();
+      });
+      if (img && !img.complete) img.addEventListener('load', alignAboutToImage);
+    }());
+  </script>
 </body>
 
 </html>

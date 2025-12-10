@@ -3,47 +3,108 @@ body {
     background-size: 1800px 1000px;
     background-repeat: no-repeat;
     background-position: top left;
+    background-attachment: fixed; /* Make background static while scrolling */
+    font-family: 'Libre Baskerville', serif !important; /* Moved from Landing.html */
+    color: #FFF8D6 !important;; /* Moved from Landing.html */
 }
+
 .custom-BG {
     background-image: url('./Image/NavBarBG.png');
     background-size: 1700px 800px;
     background-repeat: repeat;
     background-position: center;
 }
-.hero {
-    height: 85vh;
-    display: flex;
-    align-items: center;
+
+.navbar .nav-link {
+    color: #FFF8D6;  /* Moved from Landing.html */
+    transition: all 0.3s ease; /* Smooth transition */
+    border: 2px solid transparent; /* Transparent border by default */
+    border-radius: 20px; /* Curved edges */
+    padding: 0.5rem 1rem; /* Add padding for box appearance */
 }
 
-.hero-box {
-    margin-left: 70px;
-    margin-bottom: 170px;
-    background: rgba(243, 229, 171, 0.6);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 40px rgba(0,0,0,0.2);
-    backdrop-filter: blur(3px); 
-    max-width: 85%;
-    /* opacity: 0.6; */
+.navbar .nav-link:hover {
+    border: 2px solid #33211C; /* Border color on hover */
+    background-color: rgba(51, 33, 28, 1); /* Background color with transparency */
+    color: #FFF8D6; /* Keep text color unchanged on hover */
 }
 
-.hero-title {
-    font-family: "Libre Baskerville", serif;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+/* overlap: about-box sits partially behind the image on large screens */
+.image-wrapper {
+  position: relative;
+  z-index: 3; /* image above the box */
+  padding: 0; /* ensure no accidental gaps */
+  height: 100%;              /* let wrapper fill column height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* keep image centered horizontally */
+  justify-content: flex-start; /* keep greeting flushed above image */
 }
 
-.hero-subtitle {
-    font-family: "Libre Baskerville", serif;
-    font-size: 1.25rem;
-}
-  
-.hero-logo {
-    width: 75%;
-    max-width: 500px;
-    height: auto;
+/* ensure image fills left column height */
+.body-logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 100%;              /* make image fill wrapper height */
+  max-height: 100%;
+  object-fit: contain;       /* scale inside container without distortion */
 }
 
+/* default about-box look (no overlap on small screens) */
+.about-box {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  border: 5px solid #000; /* keep the border you want */
+  background-color: rgba(51, 33, 28, 0.8); /* #33211C with 80% opacity */
+}
 
+.about-box p {
+  font-size: 2.5rem; /* Increased by additional 6 units (from 1.5rem to 2.5rem) */
+}
+
+/* align contact images with the about text start */
+.about-box .contact-icon {
+  margin-left: 20px; /* align image start with about text (matches inline margin-left) */
+  max-width: 70px;   /* optional: keep the icon size reasonable */
+}
+
+/* apply overlap only on large screens and up */
+@media (min-width: 992px) {
+  /* move the box left so part sits under the image */
+  .about-box {
+    left: -8%;           /* tweak this value to increase/decrease overlap */
+    width: calc(100% + 8%); /* keep box filling column while shifting left */
+    margin-left: 0;
+  }
+
+  /* preventing the row gutters from collapsing the overlap */
+  .row.g-0 { overflow: visible; }
+}
+
+.greeting {
+  font-family: 'Knewave', cursive;
+  font-size: 160px; /* fixed at requested size */
+  display: inline-block;
+  border: none;
+  padding-top: 8px;
+  padding-right: 14px;
+  padding-left: 14px;
+  padding-bottom: 0;      /* keep it flushed above the image */
+  margin-bottom: 0;       /* remove extra gap below text */
+  line-height: 1;
+  box-sizing: border-box;
+  text-align: center;     /* ensure centered when container is centered */
+}
+
+/* ensure left column stacks nicely on small screens */
+@media (max-width: 991.98px) {
+  .col-lg-6.d-flex.flex-column.align-items-center { align-items: center; } /* keep horizontal centering */
+  .greeting { font-size: 48px; } /* reduce size on smaller devices */
+}
+
+/* small-screen cap to avoid overflow */
+@media (max-width: 420px) {
+  .greeting { font-size: 48px; }
+}
