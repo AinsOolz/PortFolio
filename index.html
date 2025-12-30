@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet"> <!-- added Knewave -->
+
+  <title>PortFolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Knewave&display=swap">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="Style.css">
-
-
-  <title>Home</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-  <!--Navbar-->
+
+  <!-- ================= NAVBAR ================= -->
   <nav class="navbar navbar-expand-lg custom-BG fixed-top">
-    <!-- Logo with spacing from the left -->
-    <a class="navbar-brand d-flex align-items-center ms-3" href="#">
-      <img src="./Image/Navbar_Logo.png" alt="Logo" width="97" height="85" class="me-1">
+    <a class="navbar-brand ms-4" href="#">
+      <img src="./Image/Navbar_Logo.png" alt="Logo" width=175px height=80px>
     </a>
 
     <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -30,7 +32,6 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <!-- Slight spacing between logo and nav links -->
       <ul class="navbar-nav ms-3">
         <li class="nav-item"><a class="nav-link" href="Project.html">PROJECTS</a></li>
         <li class="nav-item"><a class="nav-link" href="About.html">ACTIVITIES</a></li>
@@ -40,427 +41,281 @@
   </nav>
   <br>
   <br>
+  <br>
+  <br>
 
-  <div class="container py-5">
-    <div class="row g-0 align-items-stretch"> <!-- make row height = tallest column -->
-      <!-- LEFT: Image with Greeting -->
-      <div class="col-lg-6 d-flex flex-column align-items-center h-100"> <!-- full-height left column -->
-        <!-- Greeting -->
-        <h1 class="fw-normal mb-0 greeting">
-          Hello!
-        </h1>
+  <!-- ================= HERO / ABOUT ================= -->
+  <section class="container py-5">
+    <div class="row g-0 align-items-stretch">
 
+      <div class="col-lg-6 d-flex flex-column align-items-center">
+        <h1 class="greeting">Hello!</h1>
         <div class="image-wrapper">
-          <img id="bodyLogo" src="./Image/Body_Logo.png" alt="Logo" class="img-fluid body-logo">
+          <img id="bodyLogo" src="./Image/Body_Logo2.png" alt="Body Logo" class="img-fluid body-logo">
         </div>
       </div>
 
-      <!-- RIGHT: About + Contact in Box -->
-      <div class="col-lg-6 d-flex align-items-center h-100"> <!-- full-height right column, centers box vertically -->
-        <div id="aboutBox" class="about-box rounded-4 p-5" style="padding-top: 0; padding-bottom: 0;">
-          <!-- About Text -->
-          <p class="fs-6 fw-normal mb-4" style="margin-left: 20px;">
+      <div class="col-lg-6 d-flex align-items-center">
+        <div id="aboutBox" class="about-box rounded-4">
+
+          <p>
             Greetings. My name is Khairul, and I am studying Digital Design and Development at Republic Polytechnic.
             I consider myself a dedicated and driven individual who welcomes new challenges and experiences.
             I enjoy working with others and take pride in being an adaptable and dependable team player.
           </p>
 
-          <!-- Add padding for spacing -->
-          <div style="padding-bottom: 40px;"></div>
-
-          <!-- Contact Section -->
-          <div class="mt-4">
-            <!-- Contact 1 -->
+          <div class="contact-section mt-4">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="./Image/InstagramCircle.png" alt="Social Icon" class="img-fluid contact-icon">
-              <p class="m-0 fs-6">
-                @AinsOol
-              </p>
+              <img src="./Image/InstagramCircle.png" class="contact-icon" alt="Instagram">
+              <p class="m-0">@AinsOol</p>
             </div>
 
-            <!-- Contact 2 -->
             <div class="d-flex align-items-center gap-3">
-              <img src="./Image/Google Plus.png" alt="Email Icon" class="img-fluid contact-icon">
-              <p class="m-0 fs-6">
-                wickedwizard008@gmail.com
-              </p>
+              <img src="./Image/Google Plus.png" class="contact-icon" alt="Email">
+              <p class="m-0">wickedwizard008@gmail.com</p>
             </div>
           </div>
+
         </div>
       </div>
+
     </div>
-  </div>
+  </section>
 
-  <!-- add script to align about-box center with image center -->
-  <script>
-    (function () {
-      var img = document.getElementById('bodyLogo');
-      var box = document.getElementById('aboutBox');
-      var extraOffset = -25; /* move box up by 100px */
-
-      function alignAboutToImage() {
-        if (!img || !box) return;
-        // reset previous transform so measurements are accurate
-        box.style.transform = '';
-
-        var imgRect = img.getBoundingClientRect();
-        var boxRect = box.getBoundingClientRect();
-
-        // compute center positions (viewport coordinates)
-        var imgCenter = imgRect.top + imgRect.height / 2;
-        var boxCenter = boxRect.top + boxRect.height / 2;
-        var delta = imgCenter - boxCenter;
-
-        // apply vertical shift via transform (non-layout-affecting) and include extra offset
-        box.style.transform = 'translateY(' + (delta + extraOffset) + 'px)';
-      }
-
-      // run on load / resize / image load
-      window.addEventListener('load', alignAboutToImage);
-      window.addEventListener('resize', function () {
-        if (box) box.style.transform = '';
-        alignAboutToImage();
-      });
-      if (img && !img.complete) img.addEventListener('load', alignAboutToImage);
-    }());
-  </script>
-
-  </div> <!-- end existing container -->
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <!-- NEW: Boxes section -->
-  <div class="container py-4">
+  <!-- ================= SKILLS ================= -->
+  <section class="container py-4">
     <div class="row g-3 center-to-image">
-      <!-- LEFT COLUMN: ProfileImage -->
-      <div class="col-12 col-lg-4 position-relative">
+
+      <div class="col-lg-4">
         <div class="profile-wrapper">
-          <img src="./Image/ProfileImage.jpg" class="img-fluid new-side-image">
+          <img src="./Image/ProfileImage.jpg" alt="Profile" class="img-fluid new-side-image">
         </div>
       </div>
 
-
-      <!-- CENTER COLUMN: Vertical Box -->
-      <div class="col-12 col-lg-2 equal-height">
+      <div class="col-lg-2 equal-height">
         <div class="vert-box p-3 h-100">
-
-          <!-- Section Title -->
           <h5 class="text-center mb-4">SKILLS</h5>
 
-          <!-- First icon/text pair -->
-          <div class="d-flex align-items-center mb-5">
-            <img src="./Image/Adobe Photoshop.png" class="vert-icon me-0" alt="Photoshop Icon">
-            <div>
-              <p class="mb-0">Photoshop</p>
-            </div>
+          <div class="skill-item">
+            <img src="./Image/Adobe Photoshop.png" alt="Photoshop">
+            <p>Photoshop</p>
           </div>
 
-          <!-- Second icon/text pair -->
-          <div class="d-flex align-items-center mb-5">
-            <img src="./Image/Adobe Illustrator.png" class="vert-icon me-0" alt="Illustrator Icon">
-            <div>
-              <p class="mb-0">Illustrator</p>
-            </div>
+          <div class="skill-item">
+            <img src="./Image/Adobe Illustrator.png" alt="Illustrator">
+            <p>Illustrator</p>
           </div>
 
-          <!-- Third icon/text pair -->
-          <div class="d-flex align-items-center mb-5">
-            <img src="./Image/Blender 3D.png" class="vert-icon me-4" alt="XD Icon">
-            <div>
-              <p class="mb-0">Blender</p>
-            </div>
+          <div class="skill-item">
+            <img src="./Image/Blender 3D.png" alt="Blender">
+            <p>Blender</p>
           </div>
 
-          <!-- Fourth icon/text pair -->
-          <div class="d-flex align-items-center mb-5">
-            <img src="./Image/Visual Studio Code 2019.png" class="vert-icon me-0" alt="XD Icon">
-            <div>
-              <p class="mb-0">Programming Fundamental</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- RIGHT COLUMN: Stacked Horizontal Boxes -->
-      <div class="col-12 col-lg-6 equal-height">
-        <div class="row g-3 flex-grow-1 d-flex flex-column">
-          <div class="col-12 flex-fill">
-            <div class="horz-box p-3 h-100">
-              <h6 class="mb-1">Horizontal Box A</h6>
-              <p class="mb-0">Short content A.</p>
-            </div>
-          </div>
-          <div class="col-12 flex-fill">
-            <div class="horz-box p-3 h-100">
-              <h6 class="mb-1">Horizontal Box B</h6>
-              <p class="mb-0">Short content B.</p>
-            </div>
+          <div class="skill-item">
+            <img src="./Image/Visual Studio Code 2019.png" alt="VS Code">
+            <p>Programming Fundamentals</p>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- SECOND ROW: ProfileImage extends under Vertical Box -->
-    <div class="row g-3 mt-3">
-      <!-- empty column for vertical box alignment -->
-      <div class="col-lg-4"></div>
-      <div class="col-lg-2"></div>
-      <!-- This column holds the bottom part of the ProfileImage -->
-      <div class="col-lg-6">
-        <!-- optional content or can leave blank if image already covers -->
+      <div class="col-lg-6 equal-height">
+        <div class="horz-box p-3 mb-3 h-50">
+          <h6>Horizontal Box A</h6>
+          <p>Short content A.</p>
+        </div>
+
+        <div class="horz-box p-3 h-50">
+          <h6>Horizontal Box B</h6>
+          <p>Short content B.</p>
+        </div>
       </div>
+
     </div>
-  </div>
+  </section>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  <!-- ================= PROJECT 01 ================= -->
+  <section class="project-box">
+    <div class="project-content container">
+      <div class="row g-4">
 
-  <div class="project-box">
-    <div class="project-content">
-      <div class="row g-4 align-items-start">
-        <!-- Left column -->
-        <div class="col-12 col-lg-6 d-flex flex-column justify-content-between" style="height: 450px;">
-          <div>
-            <div class="d-flex align-items-baseline mb-3">
-              <div class="topic-number">/01/</div>
-              <div class="d-flex flex-column ms-3">
-                <div class="topic-title">WEB DESIGN</div>
-                <div class="topic-short-desc mt-1">
-                  Travelly - Hotel Booking
-                </div>
-              </div>
+        <div class="col-lg-6 d-flex flex-column justify-content-between">
+          <div class="d-flex align-items-baseline mb-3">
+            <div class="topic-number">/01/</div>
+            <div class="ms-3">
+              <div class="topic-title">WEB DESIGN</div>
+              <div class="topic-short-desc">Travelly – Hotel Booking</div>
             </div>
           </div>
 
           <div class="topic-featured">
             <p>
               This project was undertaken as part of one of my modules at Republic Polytechnic, where my team and I were
-              tasked with developing a website of our choice. The requirements included implementing user registration
-              and login features, along with role-based functionalities for both administrators and standard users. For
-              our project, we chose to create Travelly, a hotel-booking platform designed to offer a seamless and
-              intuitive experience.
+              tasked with developing a website of our choice.
             </p>
-            <p>&nbsp;</p>
             <p>
-              In such collaborative work, understanding one’s role and coordinating effectively with team members
-              becomes essential. Each individual’s contribution must integrate harmoniously with the others, ensuring
-              that separate functions operate as a cohesive whole. It is important to support one another throughout the
-              process, while also remaining responsible for one’s own assigned tasks.
+              The experience strengthened my ability to collaborate, coordinate responsibilities, and integrate
+              individual contributions into a cohesive final product.
             </p>
           </div>
         </div>
 
-        <!-- Right column: Featured Image -->
-        <div class="col-12 col-lg-6 d-flex">
-          <div class="img-wrapper flex-grow-1">
-            <img src="./Image/Travelly01.png" class="featured-img" alt="Featured Image">
+        <div class="col-lg-6">
+          <div class="img-wrapper">
+            <img src="./Image/Travelly01.png" class="featured-img" alt="Travelly">
           </div>
         </div>
 
-        <!-- Bottom row: small images -->
-        <div class="row g-3 mt-4 text-center text-lg-start">
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/Travelly02.png" class="topic-thumb" alt="Image 1">
-          </div>
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/Travelly03.png" class="topic-thumb" alt="Image 2">
-          </div>
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/Travelly04.png" class="topic-thumb" alt="Image 3">
-          </div>
+        <div class="row g-3 mt-4">
+          <div class="col-md-4"><img src="./Image/Travelly02.png" class="topic-thumb"></div>
+          <div class="col-md-4"><img src="./Image/Travelly03.png" class="topic-thumb"></div>
+          <div class="col-md-4"><img src="./Image/Travelly04.png" class="topic-thumb"></div>
         </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
+  <!-- ================= PROJECT 02 ================= -->
+  <section class="project-box">
+    <div class="project-content container">
+      <div class="row g-4">
 
-
-  <div class="project-box">
-    <div class="project-content">
-      <div class="row g-4 align-items-start">
-        <!-- Left column -->
-        <div class="col-12 col-lg-6 d-flex flex-column justify-content-between" style="height: 450px;">
-          <div>
-            <div class="d-flex align-items-baseline mb-3">
-              <div class="topic-number">/02/</div>
-              <div class="d-flex flex-column ms-3">
-                <div class="topic-title">DESIGN FUNDAMENTAL</div>
-                <div class="topic-short-desc mt-1">
-                  Study on the Fundamentals of Design
-                </div>
-              </div>
+        <div class="col-lg-6 d-flex flex-column justify-content-between">
+          <div class="d-flex align-items-baseline mb-3">
+            <div class="topic-number">/02/</div>
+            <div class="ms-3">
+              <div class="topic-title">DESIGN FUNDAMENTAL</div>
+              <div class="topic-short-desc">Study on Design Principles</div>
             </div>
           </div>
 
           <div class="topic-featured">
             <p>
-              This collection showcases the work I produced while studying the fundamentals of design at Republic
-              Polytechnic. It includes logo explorations, typographic studies, moodboards, and experiments with
-              AI-assisted design tools available in software such as Adobe Illustrator and Photoshop—demonstrating both
-              the creation of AI-generated elements and the techniques used to refine and adapt them.
+              A collection of explorations in typography, layout, branding, and AI-assisted design tools.
             </p>
-            <p>&nbsp;</p>
             <p>
-              The experience proved truly illuminating, offering a broad introduction to the many mediums and
-              disciplines a designer must be well-versed in—ranging from typography to emerging AI technologies.
-              Throughout my studies, I found great enthusiasm in discovering new forms of creative expression, and I
-              remain eager to continue expanding my skills, embracing future tools and methods with an open and curious
-              mind.
+              This module broadened my understanding of design as both a technical and conceptual discipline.
             </p>
           </div>
         </div>
 
-        <!-- Right column: Featured Image -->
-        <div class="col-12 col-lg-6 d-flex">
-          <div class="img-wrapper flex-grow-1">
-            <img src="./Image/DesignFun01.png" class="featured-img" alt="Featured Image">
+        <div class="col-lg-6">
+          <div class="img-wrapper">
+            <img src="./Image/DesignFun01.png" class="featured-img" alt="Design Fundamentals">
           </div>
         </div>
 
-        <!-- Bottom row: small images -->
-        <div class="row g-3 mt-4 text-center text-lg-start">
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/DesignFun02.png" class="topic-thumb" alt="Image 1">
-          </div>
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/DesignFun03.png" class="topic-thumb" alt="Image 2">
-          </div>
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/DesignFun04.png" class="topic-thumb" alt="Image 3">
-          </div>
+        <div class="row g-3 mt-4">
+          <div class="col-md-4"><img src="./Image/DesignFun02.png" class="topic-thumb"></div>
+          <div class="col-md-4"><img src="./Image/DesignFun03.png" class="topic-thumb"></div>
+          <div class="col-md-4"><img src="./Image/DesignFun04.png" class="topic-thumb"></div>
         </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
+  <!-- ================= PROJECT 03 ================= -->
+  <section class="project-box">
+    <div class="project-content container">
+      <div class="row g-4">
 
-
-  <div class="project-box">
-    <div class="project-content">
-      <div class="row g-4 align-items-start">
-        <!-- Left column -->
-        <div class="col-12 col-lg-6 d-flex flex-column justify-content-between" style="height: 450px;">
-          <div>
-            <div class="d-flex align-items-baseline mb-3">
-              <div class="topic-number">/03/</div>
-              <div class="d-flex flex-column ms-3">
-                <div class="topic-title">IMMERSIVE TECHNOLOGY</div>
-                <div class="topic-short-desc mt-1">
-                  Diving into VR - Baker’s Bizarre Bake-Off
-                </div>
-              </div>
+        <div class="col-lg-6 d-flex flex-column justify-content-between">
+          <div class="d-flex align-items-baseline mb-3">
+            <div class="topic-number">/03/</div>
+            <div class="ms-3">
+              <div class="topic-title">IMMERSIVE TECHNOLOGY</div>
+              <div class="topic-short-desc">Baker’s Bizarre Bake-Off (VR)</div>
             </div>
           </div>
 
           <div class="topic-featured">
             <p>
-              This project is a VR experience I developed for my final assessment in Immersive Technology. The task
-              required the creation of an “escape room”-style environment featuring four distinct puzzles, all built
-              around a theme of my choosing. I elected to design a whimsical, fantasy-inspired baking adventure,
-              complete with a rotating puzzle, several logic challenges, and a finale in which the player concludes the
-              experience by baking a magical cake.
+              A VR escape-room experience featuring multiple puzzles and a fantasy baking theme.
             </p>
-            <p>&nbsp;</p>
             <p>
-              It proved to be an unexpectedly adventurous foray into virtual reality. Throughout the module, I had to
-              adapt to a development process far removed from my usual comfort zone, building a functional game from the
-              ground up with limited time and resources. Though the journey was demanding, it ultimately strengthened my
-              ability to adjust swiftly and effectively when confronted with unfamiliar challenges.
+              This project challenged me to adapt rapidly and build within unfamiliar constraints.
             </p>
           </div>
         </div>
 
-        <!-- Right column: Featured Image -->
-        <div class="col-12 col-lg-6 d-flex">
-          <div class="img-wrapper flex-grow-1">
-            <img src="./Image/VR01.png" class="featured-img" alt="Featured Image">
+        <div class="col-lg-6">
+          <div class="img-wrapper">
+            <img src="./Image/VR01.png" class="featured-img" alt="VR Project">
           </div>
         </div>
 
-        <!-- Bottom row: small images -->
-        <div class="row g-3 mt-4 text-center text-lg-start">
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/VR02.png" class="topic-thumb" alt="Image 1">
-          </div>
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/VR03.png" class="topic-thumb" alt="Image 2">
-          </div>
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/VR04.png" class="topic-thumb" alt="Image 3">
-          </div>
+        <div class="row g-3 mt-4">
+          <div class="col-md-4"><img src="./Image/VR02.png" class="topic-thumb"></div>
+          <div class="col-md-4"><img src="./Image/VR03.png" class="topic-thumb"></div>
+          <div class="col-md-4"><img src="./Image/VR04.png" class="topic-thumb"></div>
         </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
+  <!-- ================= PROJECT 04 ================= -->
+  <section class="project-box">
+    <div class="project-content container">
+      <div class="row g-4">
 
-
-  <div class="project-box">
-    <div class="project-content">
-      <div class="row g-4 align-items-start">
-        <!-- Left column -->
-        <div class="col-12 col-lg-6 d-flex flex-column justify-content-between" style="height: 450px;">
-          <div>
-            <div class="d-flex align-items-baseline mb-3">
-              <div class="topic-number">/04/</div>
-              <div class="d-flex flex-column ms-3">
-                <div class="topic-title">MOBILE APP DEVELOPMENT</div>
-                <div class="topic-short-desc mt-1">
-                  Steps into Mobile Development
-                </div>
-              </div>
+        <div class="col-lg-6 d-flex flex-column justify-content-between">
+          <div class="d-flex align-items-baseline mb-3">
+            <div class="topic-number">/04/</div>
+            <div class="ms-3">
+              <div class="topic-title">MOBILE APP DEVELOPMENT</div>
+              <div class="topic-short-desc">Steps into Mobile Development</div>
             </div>
           </div>
 
           <div class="topic-featured">
             <p>
-              This collection presents my work in mobile application development, completed as part of one of my modules
-              at Republic Polytechnic. Over the course of the module, I explored a diverse range of app concepts,
-              including an income and expense tracker, a 3D model catalogue, and even a Pokémon-themed quiz—each
-              offering its own set of creative and technical challenges.
+              A range of mobile applications exploring tracking systems, 3D catalogues, and interactive quizzes.
             </p>
-            <p>&nbsp;</p>
             <p>
-              Drawing upon the adaptability I developed during my earlier venture into VR, I approached mobile
-              development with greater confidence and readiness to learn. This module broadened my familiarity with
-              various programming languages and provided valuable insight into the wider landscape of app creation,
-              further enriching my journey as a growing developer.
+              This module expanded my understanding of mobile ecosystems and development workflows.
             </p>
           </div>
         </div>
 
-        <!-- Right column: Featured Image -->
-        <div class="col-12 col-lg-6 d-flex">
-          <div class="img-wrapper flex-grow-1">
-            <img src="./Image/Mob01.png" class="featured-img" alt="Featured Image">
+        <div class="col-lg-6">
+          <div class="img-wrapper">
+            <img src="./Image/Mob01.png" class="featured-img" alt="Mobile App">
           </div>
         </div>
 
-        <!-- Bottom row: small images -->
-        <div class="row g-3 mt-4 text-center text-lg-start">
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/Mob02.png" class="topic-thumb" alt="Image 1">
-          </div>
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/Mob03.png" class="topic-thumb" alt="Image 2">
-          </div>
-          <div class="col-6 col-md-4 col-lg-4">
-            <img src="./Image/Mob04.png" class="topic-thumb" alt="Image 3">
-          </div>
+        <div class="row g-3 mt-4">
+          <div class="col-md-4"><img src="./Image/Mob02.png" class="topic-thumb"></div>
+          <div class="col-md-4"><img src="./Image/Mob03.png" class="topic-thumb"></div>
+          <div class="col-md-4"><img src="./Image/Mob04.png" class="topic-thumb"></div>
         </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
+  <!-- ================= ALIGN SCRIPT ================= -->
+  <script>
+    (() => {
+      const img = document.getElementById("bodyLogo");
+      const box = document.getElementById("aboutBox");
+      const OFFSET = -25;
 
+      const alignBox = () => {
+        if (!img || !box) return;
+
+        box.style.transform = "";
+        const imgCenter = img.getBoundingClientRect().top + img.offsetHeight / 2;
+        const boxCenter = box.getBoundingClientRect().top + box.offsetHeight / 2;
+        box.style.transform = `translateY(${imgCenter - boxCenter + OFFSET}px)`;
+      };
+
+      window.addEventListener("load", alignBox);
+      window.addEventListener("resize", alignBox);
+      img?.addEventListener("load", alignBox);
+    })();
+  </script>
 
 </body>
-
 </html>

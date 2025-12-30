@@ -1,175 +1,173 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 body {
-    background-image: url('Image/WoodBG3.png ');
-    background-size: 1800px 1000px;
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-attachment: fixed; /* Make background static while scrolling */
-    font-family: 'Libre Baskerville', serif !important; /* Moved from Landing.html */
-    color: #FFF8D6 !important;; /* Moved from Landing.html */
+  background-image: url("Image/CafeBG.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  font-family: "Libre Baskerville", serif;
+  color: #FFF8D6;
 }
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .custom-BG {
-    background-image: url('./Image/NavBarBG.png');
-    background-size: 1700px 800px;
-    background-repeat: repeat;
-    background-position: center;
+  background-image: url("./Image/NavBarBG.png");
+  background-size: 1700px 800px;
+  background-repeat: repeat;
+  background-position: center;
 }
 
-
-
-
-
-
 .navbar .nav-link {
-    color: #FFF8D6;  /* Moved from Landing.html */
-    transition: all 0.3s ease; /* Smooth transition */
-    border: 2px solid transparent; /* Transparent border by default */
-    border-radius: 20px; /* Curved edges */
-    padding: 0.5rem 1rem; /* Add padding for box appearance */
+  color: #FFF8D6;
+  padding: 0.5rem 1rem;
+
+  border: 2px solid transparent;
+  border-radius: 20px;
+
+  transition: all 0.3s ease;
 }
 
 .navbar .nav-link:hover {
-    border: 2px solid #33211C; /* Border color on hover */
-    background-color: rgba(51, 33, 28, 1); /* Background color with transparency */
-    color: #FFF8D6; /* Keep text color unchanged on hover */
+  background-color: rgba(51, 33, 28, 1);
+  border-color: #33211C;
+  color: #FFF8D6;
 }
 
 
+/* =========================================================
+   HERO / ABOUT SECTION
+========================================================= */
 
+.greeting {
+  font-family: "Knewave", cursive;
+  font-size: 160px;
+  line-height: 1;
+  margin: 0;
+  padding: 8px 14px 0;
+  text-align: center;
+}
 
-
-
-
-/* overlap: about-box sits partially behind the image on large screens */
 .image-wrapper {
   position: relative;
-  z-index: 3; /* image above the box */
-  padding: 0; /* ensure no accidental gaps */
-  height: 100%;              /* let wrapper fill column height */
+  z-index: 3;
+
   display: flex;
   flex-direction: column;
-  align-items: center;       /* keep image centered horizontally */
-  justify-content: flex-start; /* keep greeting flushed above image */
+  align-items: center;
+  justify-content: flex-start;
 }
 
-/* ensure image fills left column height */
 .body-logo {
   display: block;
-  width: auto;
   max-width: 100%;
-  height: 100%;              /* make image fill wrapper height */
-  max-height: 100%;
-  object-fit: contain;       /* scale inside container without distortion */
+  height: 100%;
+  object-fit: contain;
 }
 
-/* default about-box look (no overlap on small screens) */
+/* ABOUT BOX */
+
 .about-box {
   position: relative;
   z-index: 1;
+
+  background-color: rgba(51, 33, 28, 0.8);
+  border: 5px solid #000;
   box-sizing: border-box;
-  border: 5px solid #000; /* keep the border you want */
-  background-color: rgba(51, 33, 28, 0.8); /* #33211C with 80% opacity */
+
+  padding: 3rem;
 }
 
 .about-box p {
-  font-size: 2.5rem; /* Increased by additional 6 units (from 1.5rem to 2.5rem) */
+  font-size: 1rem;
+  margin-left: 20px; /* moved from inline */
 }
 
-/* align contact images with the about text start */
-.about-box .contact-icon {
-  margin-left: 20px; /* align image start with about text (matches inline margin-left) */
-  max-width: 70px;   /* optional: keep the icon size reasonable */
+.contact-section .contact-icon {
+  margin-left: 20px;
+  max-width: 70px;
 }
 
-/* apply overlap only on large screens and up */
+/* OVERLAP BEHAVIOUR (DESKTOP ONLY) */
 @media (min-width: 992px) {
-  /* move the box left so part sits under the image */
   .about-box {
-    left: -8%;           /* tweak this value to increase/decrease overlap */
-    width: calc(100% + 8%); /* keep box filling column while shifting left */
-    margin-left: 0;
+    left: -8%;
+    width: calc(100% + 8%);
   }
 
-  /* preventing the row gutters from collapsing the overlap */
-  .row.g-0 { overflow: visible; }
+  .row.g-0 {
+    overflow: visible;
+  }
 }
 
-.greeting {
-  font-family: 'Knewave', cursive;
-  font-size: 160px; /* fixed at requested size */
-  display: inline-block;
-  border: none;
-  padding-top: 8px;
-  padding-right: 14px;
-  padding-left: 14px;
-  padding-bottom: 0;      /* keep it flushed above the image */
-  margin-bottom: 0;       /* remove extra gap below text */
-  line-height: 1;
-  box-sizing: border-box;
-  text-align: center;     /* ensure centered when container is centered */
-}
-
-/* ensure left column stacks nicely on small screens */
-@media (max-width: 991.98px) {
-  .col-lg-6.d-flex.flex-column.align-items-center { align-items: center; } /* keep horizontal centering */
-  .greeting { font-size: 48px; } /* reduce size on smaller devices */
-}
-
-/* small-screen cap to avoid overflow */
-@media (max-width: 420px) {
-  .greeting { font-size: 48px; }
+/* RESPONSIVE GREETING */
+@media (max-width: 992px) {
+  .greeting {
+    font-size: 48px;
+  }
 }
 
 
-
-
-
+/* =========================================================
+   SKILLS SECTION
+========================================================= */
 
 .vert-box {
-  background-color: rgba(51,33,28,1);
+  position: relative;
+  z-index: 3;
+
+  background-color: rgba(51, 33, 28, 1);
   border: 5px solid #000;
   color: #FFF8D6;
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  flex: 1; /* THIS is important */
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2.5rem;
 }
 
 .horz-box {
-  background-color: rgba(51,33,28,0.75);
+  background-color: rgba(51, 33, 28, 0.75);
   border: 5px solid #000;
   color: #FFF8D6;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1; /* THIS makes each horizontal box half of the vertical box */
+  flex: 1;
 }
 
+/* PROFILE IMAGE OVERLAP */
 
-/* Allow the Profile Image to slip under the vertical box */
 .profile-wrapper {
   position: relative;
-  z-index: 1; /* behind vertical box */
+  z-index: 1;
 }
 
-.vert-box {
-  position: relative;
-  z-index: 3; /* above image */
-}
-
-/* Expand profile image into the vertical box’s space */
 @media (min-width: 992px) {
   .profile-wrapper {
-    margin-right: -80px; /* pulls image under the vertical box */
-
+    margin-right: -80px;
   }
 
   .new-side-image {
-    width: calc(100% + 80px); /* visually extend into next column */
+    width: calc(100% + 80px);
     height: 100%;
     object-fit: cover;
+
     border-radius: 40px;
-    border: 5px solid #000;;
+    border: 5px solid #000;
   }
 
   .equal-height {
@@ -180,115 +178,84 @@ body {
 
   .center-to-image {
     display: flex;
-    align-items: center; /* <— centres all columns vertically */
+    align-items: center;
   }
 }
+
+
+/* =========================================================
+   PROJECT SECTIONS
+========================================================= */
+
 .project-box {
-  background-color: rgba(51,33,28,0.8);
+  background-color: rgba(51, 33, 28, 0.8);
   border: 5px solid #000;
-  border-radius: 10px;
-  padding: 30px;
-  width: 100%; /* stretches the box full width */
-  box-sizing: border-box; /* ensures padding is included in width */
-}
+  border-radius: 20px;
 
-
-
-
-
-
-
-
-
-
-/* OUTER BOX */
-.project-box {
-  background-color: rgba(51,33,28,0.8);
-  border: 5px solid #000;
-  border-radius: 10px;
   width: 100%;
+  padding: 30px;
   box-sizing: border-box;
+  margin-top: 50px;
 }
 
-/* INNER CONTENT: reduces padding from container edges */
 .project-content {
-  padding: 20px; /* adjust as needed to bring content closer to edges */
+  padding: 20px;
 }
 
-/* Align number and topic */
-.d-flex.align-items-baseline {
-  gap: 200px; /* spacing between number and topic */
-  align-items: baseline; /* aligns the bottom of the text with the number */
-}
+/* TOPIC HEADER */
 
-/* Topic number styling */
 .topic-number {
-  font-family: 'Knewave', cursive;
-  font-size: 96px; /* large number */
+  font-family: "Knewave", cursive;
+  font-size: 96px;
+  line-height: 1;
+
   color: #FFF8D6;
-  width: 120px;          /* fixed width to align neatly */
+  width: 120px;
   text-align: right;
   flex-shrink: 0;
-  line-height: 1;       /* ensures bottom aligns exactly */
 }
 
-/* Topic title */
 .topic-title {
-  font-family: 'Libre Baskerville', serif;
   font-weight: 700;
+  font-size: 2rem;
   color: #FFF8D6;
-  font-size: 2rem;       /* adjust as needed */
-  flex: 1;               /* takes remaining space */
-  line-height: 1;        /* align baseline with number */
 }
 
-/* Short description under topic */
 .topic-short-desc {
-  font-family: 'Libre Baskerville', serif;
-  color: #FFF8D6;
   font-size: 1rem;
-  margin-bottom: 2rem; /* spacing before bottom paragraph */
+  color: #FFF8D6;
+  margin-bottom: 2rem;
 }
 
-/* Bottom paragraph */
+/* CONTENT */
+
 .topic-featured p {
-  font-family: 'Libre Baskerville', serif;
   font-size: 14px;
   color: #FFF8D6;
-  margin: 0 0 0.5rem 0;
+  margin-bottom: 0.5rem;
 }
 
-/* Featured Image Container */
-.col-12.col-lg-6.d-flex.justify-content-end {
+/* IMAGES */
+
+.img-wrapper {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start; /* aligns top with left column */
+  align-items: flex-start;
 }
 
-/* Fixed-size featured image */
 .featured-img {
   width: 100%;
   height: 500px;
   object-fit: cover;
+
   border-radius: 40px;
-  display: block;
   border: 5px solid #000;
 }
 
-/* Ensure left column matches the featured image height */
-.col-12.col-lg-6.d-flex.flex-column.justify-content-between {
-  height: 500px; /* same as .featured-img height */
-}
-.img-wrapper {
-  display: flex;
-  align-items: flex-start; /* aligns top with left column */
-}
-
 .topic-thumb {
-  width: 100%;       /* fixed width */
-  height: 300px;      /* fixed height */
-  object-fit: cover;  /* maintains aspect ratio and crops if needed */
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+
   border-radius: 10px;
-  display: inline-block;
-  margin: 0 auto;     /* center on small screens */
+  display: block;
 }
