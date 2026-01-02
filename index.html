@@ -21,40 +21,42 @@
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg custom-BG fixed-top">
-  <div class="container-fluid justify-content-center">
+  <nav class="navbar navbar-expand-lg custom-BG fixed-top">
+    <div class="container-fluid">
 
-    <!-- CENTER COLUMN (controls alignment) -->
-    <div class="navbar-center d-flex flex-column align-items-center">
+      <!-- CENTER CONTENT -->
+      <div class="navbar-center">
 
-      <!-- Logo -->
-      <a class="navbar-brand mb-2" href="#">
-        <img src="./Image/Navbar_Logo.png" alt="Logo" width=260 height="40">
-      </a>
+        <a class="navbar-brand mb-2" href="#">
+          <img src="./Image/Navbar_Logo.png" alt="Logo" width="260" height="40">
+        </a>
 
-      <!-- Toggler -->
-      <button
-        class="navbar-toggler mb-2"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <!-- Nav items -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav flex-row gap-3">
-          <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
-          <li class="nav-item"><a class="nav-link" href="Project.html">PROJECTS</a></li>
-          <li class="nav-item"><a class="nav-link" href="About.html">ACTIVITIES</a></li>
-        </ul>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav flex-row gap-3">
+            <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+            <li class="nav-item"><a class="nav-link" href="Project.html">PROJECTS</a></li>
+            <li class="nav-item"><a class="nav-link" href="About.html">ACTIVITIES</a></li>
+          </ul>
+        </div>
+
       </div>
 
-    </div>
+      <!-- MUSIC TOGGLE -->
+      <div class="music-toggle">
+        <img src="./Image/music-icon.png" alt="Toggle background music" id="music-btn">
+      </div>
 
-  </div>
-</nav>
+      <audio id="bg-music" loop>
+        <source src="./Audio/ambient.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+  </nav>
+
 
 
   <!-- ================= HERO / ABOUT ================= -->
@@ -380,6 +382,8 @@
     })();
   </script>
 
+
+
   <script>
     const slides = document.querySelectorAll('.profile-slide');
     const dots = document.querySelectorAll('.carousel-dots .dot');
@@ -423,6 +427,23 @@
     startCarousel();
   </script>
 
+
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const btn = document.getElementById("music-btn");
+
+    btn.addEventListener("click", () => {
+      if (music.paused) {
+        music.volume = 0.20; // subtle, always subtle
+        music.play();
+        btn.classList.add("playing");
+      } else {
+        music.pause();
+        btn.classList.remove("playing");
+      }
+    });
+  </script>
 
 </body>
 
