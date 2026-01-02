@@ -2,6 +2,10 @@
    GLOBAL
 ========================================================= */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url("Image/CafeBG.png");
   background-size: 100% 100%;
@@ -13,9 +17,6 @@ body {
   color: #FFF8D6;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 /* =========================================================
    NAVBAR
@@ -46,6 +47,23 @@ html {
 
 #about {
   scroll-margin-top: 100px;
+}
+
+.navbar {
+  text-align: center;
+}
+
+.navbar-center {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.navbar-nav {
+  justify-content: center;
+}
+
+.navbar .nav-link {
+  text-align: center;
 }
 
 
@@ -138,6 +156,11 @@ html {
   flex-direction: column;
 }
 
+.vert-box h5 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
 .skill-item {
   display: flex;
   align-items: center;
@@ -146,7 +169,7 @@ html {
 }
 
 .skill-item img {
-  width: 72px;              /* fixed icon width for alignment */
+  width: 72px;
   height: 72px;
   object-fit: contain;
   flex-shrink: 0;
@@ -155,7 +178,7 @@ html {
 .skill-item p {
   margin: 0;
   font-size: 11px;
-  line-height: 1.2;
+  line-height: 1.5;
 
   flex: 1;
   min-width: 0;
@@ -164,8 +187,6 @@ html {
   overflow-wrap: break-word;
   white-space: normal;
 }
-
-
 
 .horz-box {
   background-color: rgba(51, 33, 28, 0.75);
@@ -176,6 +197,15 @@ html {
   flex-direction: column;
   justify-content: center;
   flex: 1;
+}
+
+.horz-box h6 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.horz-box p b {
+  font-size: 20px;
 }
 
 /* PROFILE IMAGE OVERLAP */
@@ -210,6 +240,60 @@ html {
     align-items: center;
   }
 }
+
+/* PROFILE IMAGE CAROUSEL */
+
+.profile-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-slide {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  border-radius: 40px;
+  border: 5px solid #000;
+}
+
+.profile-slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Dots */
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 12px;
+}
+
+.carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+  border: 2px solid #000;
+  background-color: rgba(255, 248, 214, 0.4);
+
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+  background-color: #FFF8D6;
+}
+
 
 
 /* =========================================================
