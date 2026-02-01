@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="scripts.js" defer></script>
 
 <head>
   <meta charset="UTF-8" />
@@ -19,15 +20,268 @@
   <link rel="stylesheet" href="Style.css">
 </head>
 
+<!-- ================= MODAL FOR PROJECT SECTIONS ================= -->
+<div class="modal fade" id="projectTravelly" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content project-modal">
+
+      <!-- HEADER -->
+      <div class="modal-header">
+        <h5 class="modal-title">Travelly – Hotel Booking</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body">
+        <div class="row g-4">
+
+          <!-- IMAGE GALLERY -->
+          <div class="col-lg-6">
+
+            <!-- Main Image -->
+            <img src="./Image/Travelly01.png" id="travellyMainImg"
+              class="img-fluid rounded-4 border border-dark modal-main-img" alt="Travelly preview">
+
+            <!-- Thumbnails -->
+            <div class="modal-thumbs mt-3">
+              <img src="./Image/Travelly01.png" data-target="travellyMainImg" alt="">
+              <img src="./Image/Travelly02.png" data-target="travellyMainImg" alt="">
+              <img src="./Image/Travelly03.png" data-target="travellyMainImg" alt="">
+              <img src="./Image/Travelly04.png" data-target="travellyMainImg" alt="">
+            </div>
+
+          </div>
+
+          <!-- TEXT CONTENT -->
+          <div class="col-lg-6">
+            <p>
+              This project was undertaken as part of one of my modules at Republic Polytechnic, where my team and I were
+              tasked with developing a website of our choice. The requirements included implementing user registration
+              and login features, along with role-based functionalities for both administrators and standard users.
+            </p>
+
+            <p>
+              In such collaborative work, understanding one’s role and coordinating effectively with team members
+              becomes essential. Each individual’s contribution must integrate harmoniously with the others, ensuring
+              that separate functions operate as a cohesive whole.
+            </p>
+
+            <ul>
+              <li>User registration and authentication system</li>
+              <li>Role-based access for administrators and standard users</li>
+              <li>Responsive interface designed for usability and clarity</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="projectDesignFundamental" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content project-modal">
+
+      <!-- HEADER -->
+      <div class="modal-header">
+        <h5 class="modal-title">Study on Design Principles</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body">
+        <div class="row g-4">
+
+          <!-- IMAGE GALLERY -->
+          <div class="col-lg-6">
+
+            <!-- Main Image -->
+            <img src="./Image/DesignFun01.png" id="designFunMainImg"
+              class="img-fluid rounded-4 border border-dark modal-main-img" alt="Design Principles preview">
+
+            <!-- Thumbnails -->
+            <div class="modal-thumbs mt-3">
+              <img src="./Image/DesignFun01.png" data-target="designFunMainImg" alt="">
+              <img src="./Image/DesignFun02.png" data-target="designFunMainImg" alt="">
+              <img src="./Image/DesignFun03.png" data-target="designFunMainImg" alt="">
+              <img src="./Image/DesignFun04.png" data-target="designFunMainImg" alt="">
+            </div>
+
+          </div>
+
+          <!-- TEXT CONTENT -->
+          <div class="col-lg-6">
+            <p>
+              This collection showcases the work I produced while studying the fundamentals of design at Republic
+              Polytechnic. It includes logo explorations, typographic studies, moodboards, and experiments with
+              AI-assisted design tools available in software such as Adobe Illustrator and Photoshop—demonstrating both
+              the creation of AI-generated elements and the techniques used to refine and adapt them.
+            </p>
+
+            <p>
+              The experience proved truly illuminating, offering a broad introduction to the many mediums and
+              disciplines a designer must be well-versed in—ranging from typography to emerging AI technologies.
+              Throughout my studies, I found great enthusiasm in discovering new forms of creative expression, and I
+              remain eager to continue expanding my skills, embracing future tools and methods with an open and curious
+              mind.
+            </p>
+
+            <ul>
+              <li>Exploration of core design principles such as balance, contrast, and hierarchy</li>
+              <li>Typography studies and logo development exercises</li>
+              <li>Use of Adobe Illustrator and Photoshop, including AI-assisted design workflows</li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="projectVRProject" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content project-modal">
+
+      <!-- HEADER -->
+      <div class="modal-header">
+        <h5 class="modal-title">Baker’s Bizarre Bake-Off (VR)</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body">
+        <div class="row g-4">
+
+          <!-- IMAGE GALLERY -->
+          <div class="col-lg-6">
+
+            <!-- Main Image -->
+            <img src="./Image/VR01.png" id="vrMainImg" class="img-fluid rounded-4 border border-dark modal-main-img"
+              alt="VR Project preview">
+
+            <!-- Thumbnails -->
+            <div class="modal-thumbs mt-3">
+              <img src="./Image/VR01.png" data-target="vrMainImg" alt="">
+              <img src="./Image/VR02.png" data-target="vrMainImg" alt="">
+              <img src="./Image/VR03.png" data-target="vrMainImg" alt="">
+              <img src="./Image/VR04.png" data-target="vrMainImg" alt="">
+            </div>
+
+          </div>
+
+          <!-- TEXT CONTENT -->
+          <div class="col-lg-6">
+            <p>
+              This project is a VR experience I developed for my final assessment in Immersive Technology. The task
+              required the creation of an “escape room”-style environment featuring four distinct puzzles, all built
+              around a theme of my choosing. I elected to design a whimsical, fantasy-inspired baking adventure,
+              complete with a rotating puzzle, several logic challenges, and a finale in which the player concludes the
+              experience by baking a magical cake.
+            </p>
+
+            <p>
+              It proved to be an unexpectedly adventurous foray into virtual reality. Throughout the module, I had to
+              adapt to a development process far removed from my usual comfort zone, building a functional game from the
+              ground up with limited time and resources. Though the journey was demanding, it ultimately strengthened my
+              ability to adjust swiftly and effectively when confronted with unfamiliar challenges.
+            </p>
+
+            <ul>
+              <li>Development of a VR escape-room experience with multiple interactive puzzles</li>
+              <li>Implementation of logic-based and rotational puzzle mechanics</li>
+              <li>Hands-on experience with immersive design and rapid problem-solving under constraints</li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="projectMobileApp" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content project-modal">
+
+      <!-- HEADER -->
+      <div class="modal-header">
+        <h5 class="modal-title">Steps into Mobile Development</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body">
+        <div class="row g-4">
+
+          <!-- IMAGE GALLERY -->
+          <div class="col-lg-6">
+
+            <!-- Main Image -->
+            <img src="./Image/Mob01.png" id="mobMainImg" class="img-fluid rounded-4 border border-dark modal-main-img"
+              alt="Mobile App Project preview">
+
+            <!-- Thumbnails -->
+            <div class="modal-thumbs mt-3">
+              <img src="./Image/Mob01.png" data-target="mobMainImg" alt="">
+              <img src="./Image/Mob02.png" data-target="mobMainImg" alt="">
+              <img src="./Image/Mob03.png" data-target="mobMainImg" alt="">
+              <img src="./Image/Mob04.png" data-target="mobMainImg" alt="">
+            </div>
+
+          </div>
+
+          <!-- TEXT CONTENT -->
+          <div class="col-lg-6">
+            <p>
+              This collection presents my work in mobile application development, completed as part of one of my modules
+              at Republic Polytechnic. Over the course of the module, I explored a diverse range of app concepts,
+              including an income and expense tracker, a 3D model catalogue, and even a Pokémon-themed quiz—each
+              offering its own set of creative and technical challenges.
+            </p>
+
+            <p>
+              Drawing upon the adaptability I developed during my earlier venture into VR, I approached mobile
+              development with greater confidence and readiness to learn. This module broadened my familiarity with
+              various programming languages and provided valuable insight into the wider landscape of app creation,
+              further enriching my journey as a growing developer.
+            </p>
+
+            <ul>
+              <li>Design and development of multiple mobile app prototypes</li>
+              <li>Exposure to different app concepts including tracking tools, quizzes, and 3D catalogues</li>
+              <li>Strengthened understanding of mobile UI design and programming fundamentals</li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <body>
 
+  <!-- ================= NAVBAR ================= -->
   <nav class="navbar navbar-expand-lg custom-BG fixed-top">
     <div class="container-fluid">
 
       <!-- CENTER CONTENT -->
       <div class="navbar-center">
 
-        <a class="navbar-brand mb-2" href="#">
+        <a class="navbar-brand my-2" href="#">
           <img src="./Image/Navbar_Logo.png" alt="Logo" width="260" height="40">
         </a>
 
@@ -38,8 +292,8 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav flex-row gap-3">
             <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
-            <li class="nav-item"><a class="nav-link" href="Project.html">PROJECTS</a></li>
-            <li class="nav-item"><a class="nav-link" href="About.html">ACTIVITIES</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
+            <li class="nav-item"><a class="nav-link" href="#activities">ACTIVITIES</a></li>
           </ul>
         </div>
 
@@ -56,8 +310,6 @@
 
     </div>
   </nav>
-
-
 
   <!-- ================= HERO / ABOUT ================= -->
   <section id="about" class="container py-5 mt-5">
@@ -174,276 +426,128 @@
     </div>
   </section>
 
-  <!-- ================= PROJECT 01 ================= -->
-  <section class="project-box">
-    <div class="project-content container">
-      <div class="row g-4">
+  <!-- ================= PROJECT GRID ================= -->
+  <section id="projects" class="container py-5">
+    <div class="row g-4">
 
-        <div class="col-lg-6 d-flex flex-column justify-content-between">
-          <div class="mb-3 topic-header">
-            <div class="topic-number">/01/</div>
-            <div class="topic-text">
-              <div class="topic-title">WEB DESIGN</div>
-              <div class="topic-short-desc">Travelly – Hotel Booking</div>
+      <!-- CARD 01 -->
+      <div class="col-md-6">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectTravelly">
+          <div class="card h-100">
+            <img src="./Image/Travelly01.png" class="card-img-top" alt="Travelly">
+            <div class="card-body">
+              <h5 class="card-title">Travelly – Hotel Booking</h5>
+              <p class="card-subtitle">WEB DESIGN</p>
+              <p class="card-text">
+                A full-stack hotel booking platform with user authentication and role-based access.
+              </p>
             </div>
           </div>
-
-          <div class="topic-featured">
-            <p>
-              This project was undertaken as part of one of my modules at Republic Polytechnic, where my team and I were
-              tasked with developing a website of our choice. The requirements included implementing user registration
-              and login features, along with role-based functionalities for both administrators and standard users. For
-              our project, we chose to create Travelly, a hotel-booking platform designed to offer a seamless and
-              intuitive experience.
-            </p>
-            <p>
-              In such collaborative work, understanding one’s role and coordinating effectively with team members
-              becomes essential. Each individual’s contribution must integrate harmoniously with the others, ensuring
-              that separate functions operate as a cohesive whole. It is important to support one another throughout the
-              process, while also remaining responsible for one’s own assigned tasks.
-            </p>
-          </div>
         </div>
-
-        <div class="col-lg-6">
-          <div class="img-wrapper">
-            <img src="./Image/Travelly01.png" class="featured-img" alt="Travelly">
-          </div>
-        </div>
-
-        <div class="row g-3 mt-4">
-          <div class="col-md-4"><img src="./Image/Travelly02.png" class="topic-thumb"></div>
-          <div class="col-md-4"><img src="./Image/Travelly03.png" class="topic-thumb"></div>
-          <div class="col-md-4"><img src="./Image/Travelly04.png" class="topic-thumb"></div>
-        </div>
-
       </div>
+
+      <!-- CARD 02 -->
+      <div class="col-md-6">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectDesignFundamental">
+          <div class="card h-100">
+            <img src="./Image/DesignFun01.png" class="card-img-top" alt="Design Fundamentals">
+            <div class="card-body">
+              <h5 class="card-title">Study on Design Principles</h5>
+              <p class="card-subtitle">DESIGN FUNDAMENTAL</p>
+              <p class="card-text">
+                Explorations in typography, branding, logo creation and AI-assisted design workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 03 -->
+      <div class="col-md-6">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectVRProject">
+          <div class="card h-100">
+            <img src="./Image/VR01.png" class="card-img-top" alt="VR Project">
+            <div class="card-body">
+              <h5 class="card-title">Baker’s Bizarre Bake-Off</h5>
+              <p class="card-subtitle">IMMERSIVE TECHNOLOGY</p>
+              <p class="card-text">
+                A fantasy-themed VR escape room featuring logic puzzles and interactive baking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 04 -->
+      <div class="col-md-6">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectMobileApp">
+          <div class="card h-100">
+            <img src="./Image/Mob01.png" class="card-img-top" alt="Mobile App">
+            <div class="card-body">
+              <h5 class="card-title">Steps into Mobile Development</h5>
+              <p class="card-subtitle">MOBILE APP DEVELOPMENT</p>
+              <p class="card-text">
+                A series of mobile applications exploring UI, logic, and cross-platform concepts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ================= PROJECT 02 ================= -->
-  <section class="project-box">
-    <div class="project-content container">
-      <div class="row g-4">
+  <!-- ================= ACTIVITIES CAROUSEL ================= -->
+  <section id="activities" class="container py-5">
 
-        <div class="col-lg-6 d-flex flex-column justify-content-between">
-          <div class="mb-3 topic-header">
-            <div class="topic-number">/02/</div>
-            <div class="topic-text">
-              <div class="topic-title">DESIGN FUNDAMENTAL</div>
-              <div class="topic-short-desc">Study on Design Principles</div>
-            </div>
-          </div>
+    <h2 class="text-center mb-4 greeting" style="font-size: 64px;">
+      Activities
+    </h2>
 
-          <div class="topic-featured">
-            <p>
-              This collection showcases the work I produced while studying the fundamentals of design at Republic
-              Polytechnic. It includes logo explorations, typographic studies, moodboards, and experiments with
-              AI-assisted design tools available in software such as Adobe Illustrator and Photoshop—demonstrating both
-              the creation of AI-generated elements and the techniques used to refine and adapt them.
-            </p>
-            <p>
-              The experience proved truly illuminating, offering a broad introduction to the many mediums and
-              disciplines a designer must be well-versed in—ranging from typography to emerging AI technologies.
-              Throughout my studies, I found great enthusiasm in discovering new forms of creative expression, and I
-              remain eager to continue expanding my skills, embracing future tools and methods with an open and curious
-            </p>
-          </div>
+    <div class="activities-carousel-wrapper">
+
+      <!-- Left Button -->
+      <button class="carousel-btn left" id="activityPrev">‹</button>
+
+      <!-- Track -->
+      <div class="activities-carousel" id="activitiesCarousel">
+
+        <!-- CARD 1 -->
+        <div class="activity-card">
+          <img src="./Image/Kidney.jpg" alt="Activity 1">
+          <h6>An Educational Kidney Experience</h6>
+          <p>An insight into how our body works</p>
         </div>
 
-        <div class="col-lg-6">
-          <div class="img-wrapper">
-            <img src="./Image/DesignFun01.png" class="featured-img" alt="Design Fundamentals">
-          </div>
+        <!-- CARD 2 -->
+        <div class="activity-card">
+          <img src="./Image/Orientation.jpg" alt="Activity 2">
+          <h6>Orientation AY2025</h6>
+          <p>Lead a new batch of class around campus</p>
         </div>
 
-        <div class="row g-3 mt-4">
-          <div class="col-md-4"><img src="./Image/DesignFun02.png" class="topic-thumb"></div>
-          <div class="col-md-4"><img src="./Image/DesignFun03.png" class="topic-thumb"></div>
-          <div class="col-md-4"><img src="./Image/DesignFun04.png" class="topic-thumb"></div>
+        <!-- CARD 3 -->
+        <div class="activity-card">
+          <img src="./Image/MissionX.jpg" alt="Activity 3">
+          <h6>Mission X</h6>
+          <p>Obtained and improved on Leadership Workshop</p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PROJECT 03 ================= -->
-  <section class="project-box">
-    <div class="project-content container">
-      <div class="row g-4">
-
-        <div class="col-lg-6 d-flex flex-column justify-content-between">
-          <div class="mb-3 topic-header">
-            <div class="topic-number">/03/</div>
-            <div class="topic-text">
-              <div class="topic-title">IMMERSIVE TECHNOLOGY</div>
-              <div class="topic-short-desc">Baker’s Bizarre Bake-Off (VR)</div>
-            </div>
-          </div>
-
-          <div class="topic-featured">
-            <p>
-              This project is a VR experience I developed for my final assessment in Immersive Technology. The task
-              required the creation of an “escape room”-style environment featuring four distinct puzzles, all built
-              around a theme of my choosing. I elected to design a whimsical, fantasy-inspired baking adventure,
-              complete with a rotating puzzle, several logic challenges, and a finale in which the player concludes the
-              experience by baking a magical cake.
-            </p>
-            <p>
-              It proved to be an unexpectedly adventurous foray into virtual reality. Throughout the module, I had to
-              adapt to a development process far removed from my usual comfort zone, building a functional game from the
-              ground up with limited time and resources. Though the journey was demanding, it ultimately strengthened my
-              ability to adjust swiftly and effectively when confronted with unfamiliar challenges.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="img-wrapper">
-            <img src="./Image/VR01.png" class="featured-img" alt="VR Project">
-          </div>
-        </div>
-
-        <div class="row g-3 mt-4">
-          <div class="col-md-4"><img src="./Image/VR02.png" class="topic-thumb"></div>
-          <div class="col-md-4"><img src="./Image/VR03.png" class="topic-thumb"></div>
-          <div class="col-md-4"><img src="./Image/VR04.png" class="topic-thumb"></div>
+        <!-- CARD 4 -->
+        <div class="activity-card">
+          <img src="./Image/Volunteer.jpg" alt="Activity 4">
+          <h6>AI Kakis</h6>
+          <p>Helping the elderly communities learn AI</p>
         </div>
 
       </div>
+
+      <!-- Right Button -->
+      <button class="carousel-btn right" id="activityNext">›</button>
+
     </div>
+
   </section>
-
-  <!-- ================= PROJECT 04 ================= -->
-  <section class="project-box">
-    <div class="project-content container">
-      <div class="row g-4">
-
-        <div class="col-lg-6 d-flex flex-column justify-content-between">
-          <div class="mb-3 topic-header">
-            <div class="topic-number">/04/</div>
-            <div class="topic-text">
-              <div class="topic-title">MOBILE APP DEVELOPMENT</div>
-              <div class="topic-short-desc">Steps into Mobile Development</div>
-            </div>
-          </div>
-
-          <div class="topic-featured">
-            <p>
-              This collection presents my work in mobile application development, completed as part of one of my modules
-              at Republic Polytechnic. Over the course of the module, I explored a diverse range of app concepts,
-              including an income and expense tracker, a 3D model catalogue, and even a Pokémon-themed quiz—each
-              offering its own set of creative and technical challenges.
-            </p>
-            <p>
-              Drawing upon the adaptability I developed during my earlier venture into VR, I approached mobile
-              development with greater confidence and readiness to learn. This module broadened my familiarity with
-              various programming languages and provided valuable insight into the wider landscape of app creation,
-              further enriching my journey as a growing developer.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="img-wrapper">
-            <img src="./Image/Mob01.png" class="featured-img" alt="Mobile App">
-          </div>
-        </div>
-
-        <div class="row g-3 mt-4">
-          <div class="col-md-4"><img src="./Image/Mob02.png" class="topic-thumb"></div>
-          <div class="col-md-4"><img src="./Image/Mob03.png" class="topic-thumb"></div>
-          <div class="col-md-4"><img src="./Image/Mob04.png" class="topic-thumb"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ALIGN SCRIPT ================= -->
-  <script>
-    (() => {
-      const img = document.getElementById("bodyLogo");
-      const box = document.getElementById("aboutBox");
-      const OFFSET = -25;
-
-      const alignBox = () => {
-        if (!img || !box) return;
-
-        box.style.transform = "";
-        const imgCenter = img.getBoundingClientRect().top + img.offsetHeight / 2;
-        const boxCenter = box.getBoundingClientRect().top + box.offsetHeight / 2;
-        box.style.transform = `translateY(${imgCenter - boxCenter + OFFSET}px)`;
-      };
-
-      window.addEventListener("load", alignBox);
-      window.addEventListener("resize", alignBox);
-      img?.addEventListener("load", alignBox);
-    })();
-  </script>
-
-
-
-  <script>
-    const slides = document.querySelectorAll('.profile-slide');
-    const dots = document.querySelectorAll('.carousel-dots .dot');
-
-    let currentIndex = 0;
-    const intervalTime = 4000;
-    let carouselInterval;
-
-    function showSlide(index) {
-      slides.forEach(s => s.classList.remove('active'));
-      dots.forEach(d => d.classList.remove('active'));
-
-      slides[index].classList.add('active');
-      dots[index].classList.add('active');
-
-      currentIndex = index;
-    }
-
-    function nextSlide() {
-      const nextIndex = (currentIndex + 1) % slides.length;
-      showSlide(nextIndex);
-    }
-
-    function startCarousel() {
-      carouselInterval = setInterval(nextSlide, intervalTime);
-    }
-
-    function resetCarousel() {
-      clearInterval(carouselInterval);
-      startCarousel();
-    }
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const index = Number(dot.dataset.slide);
-        showSlide(index);
-        resetCarousel();
-      });
-    });
-
-    startCarousel();
-  </script>
-
-
-
-  <script>
-    const music = document.getElementById("bg-music");
-    const btn = document.getElementById("music-btn");
-
-    btn.addEventListener("click", () => {
-      if (music.paused) {
-        music.volume = 0.20; // subtle, always subtle
-        music.play();
-        btn.classList.add("playing");
-      } else {
-        music.pause();
-        btn.classList.remove("playing");
-      }
-    });
-  </script>
 
 </body>
 

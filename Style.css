@@ -1,5 +1,5 @@
 /* =========================================================
-   GLOBAL
+   ROOT / GLOBAL
 ========================================================= */
 
 html {
@@ -7,14 +7,10 @@ html {
 }
 
 body {
-  background-image: url("Image/CafeBG.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-
   font-family: "Libre Baskerville", serif;
   color: #FFF8D6;
+
+  background: url("Image/CafeBG.png") center / 100% 100% no-repeat fixed;
 }
 
 
@@ -22,71 +18,93 @@ body {
    NAVBAR
 ========================================================= */
 
-.custom-BG {
-  background-image: url("./Image/NavBarBG.png");
-  background-size: 1700px 800px;
-  background-repeat: repeat;
-  background-position: center;
-}
-
-.container-fluid {
-  position: relative; /* for absolute children like navbar-center & music toggle */
-  width: 100%;
-  padding: 0 2rem;
-  min-height: 80px; /* maintain navbar height (adjust to your logo height) */
-  display: flex;
-  align-items: center; /* keeps background filled and vertical alignment */
-}
-
-.navbar .nav-link {
-  color: #FFF8D6;
-  padding: 0.5rem 1rem;
-
-  border: 2px solid transparent;
-  border-radius: 20px;
-
-  transition: all 0.3s ease;
-}
-
-.navbar .nav-link:hover {
-  background-color: rgba(51, 33, 28, 1);
-  border-color: #33211C;
-  color: #FFF8D6;
-}
-
-#about {
-  scroll-margin-top: 100px;
-}
-
 .navbar {
   text-align: center;
 }
 
+#projects {
+  scroll-margin-top: 100px;
+  /* same height as your navbar */
+}
+
+.custom-BG {
+  background: url("./Image/NavBarBG.png") center / 1700px 800px repeat;
+}
+
+.container-fluid {
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+  padding: 0 2rem 1rem;
+
+  display: flex;
+  align-items: center;
+}
+
+/* Center block (logo + nav) */
 .navbar-center {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
 }
 
 .navbar-nav {
   justify-content: center;
 }
 
+/* Nav links */
 .navbar .nav-link {
+  color: #FFF8D6;
+  padding: 0.5rem 1rem;
   text-align: center;
+
+  border: none;
+  border-radius: 0;
+
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* MUSIC TOGGLE BUTTON */
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #FFF8D6;
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar .nav-link:hover {
+  color: #FFF8D6;
+}
+
+/* Anchor offset */
+#about {
+  scroll-margin-top: 100px;
+}
+
+
+/* =========================================================
+   MUSIC TOGGLE
+========================================================= */
 
 .music-toggle {
   position: absolute;
   right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
+
   display: flex;
   align-items: center;
 }
@@ -95,28 +113,27 @@ body {
   width: 36px;
   height: 36px;
   cursor: pointer;
+
   transition: transform 0.3s ease;
 }
 
-/* Rotating state */
 #music-btn.playing {
   animation: spin 24s linear infinite;
 }
 
-/* Slow, elegant rotation */
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 
-
 /* =========================================================
-   HERO / ABOUT SECTION
+   HERO / ABOUT
 ========================================================= */
 
 .greeting {
@@ -135,7 +152,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .body-logo {
@@ -145,22 +161,19 @@ body {
   object-fit: contain;
 }
 
-/* ABOUT BOX */
-
+/* About box */
 .about-box {
   position: relative;
   z-index: 1;
 
   background-color: rgba(51, 33, 28, 0.8);
   border: 5px solid #000;
-  box-sizing: border-box;
-
   padding: 3rem;
 }
 
 .about-box p {
   font-size: 1rem;
-  margin-left: 20px; /* moved from inline */
+  margin-left: 20px;
 }
 
 .contact-section .contact-icon {
@@ -168,7 +181,7 @@ body {
   max-width: 70px;
 }
 
-/* OVERLAP BEHAVIOUR (DESKTOP ONLY) */
+/* Desktop overlap */
 @media (min-width: 992px) {
   .about-box {
     left: -8%;
@@ -180,7 +193,7 @@ body {
   }
 }
 
-/* RESPONSIVE GREETING */
+/* Responsive greeting */
 @media (max-width: 992px) {
   .greeting {
     font-size: 48px;
@@ -189,19 +202,21 @@ body {
 
 
 /* =========================================================
-   SKILLS SECTION
+   SKILLS / PROFILE
 ========================================================= */
 
-.vert-box {
-  position: relative;
-  z-index: 3;
-
-  background-color: rgba(51, 33, 28, 1);
+.vert-box,
+.horz-box {
   border: 5px solid #000;
   color: #FFF8D6;
-
   display: flex;
   flex-direction: column;
+}
+
+.vert-box {
+  background-color: rgba(51, 33, 28, 1);
+  position: relative;
+  z-index: 5;
 }
 
 .vert-box h5 {
@@ -230,19 +245,11 @@ body {
 
   flex: 1;
   min-width: 0;
-
   word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
 }
 
 .horz-box {
   background-color: rgba(51, 33, 28, 0.75);
-  border: 5px solid #000;
-  color: #FFF8D6;
-
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   flex: 1;
 }
@@ -256,40 +263,15 @@ body {
   font-size: 20px;
 }
 
-/* PROFILE IMAGE OVERLAP */
+
+/* =========================================================
+   PROFILE IMAGE & CAROUSEL
+========================================================= */
 
 .profile-wrapper {
   position: relative;
   z-index: 1;
 }
-
-@media (min-width: 992px) {
-  .profile-wrapper {
-    margin-right: -80px;
-  }
-
-  .new-side-image {
-    width: calc(100% + 80px);
-    height: 100%;
-    object-fit: cover;
-
-    border-radius: 40px;
-    border: 5px solid #000;
-  }
-
-  .equal-height {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .center-to-image {
-    display: flex;
-    align-items: center;
-  }
-}
-
-/* PROFILE IMAGE CAROUSEL */
 
 .profile-carousel {
   position: relative;
@@ -317,13 +299,11 @@ body {
   position: relative;
 }
 
-/* Dots */
-
+/* Carousel dots */
 .carousel-dots {
   display: flex;
   justify-content: center;
   gap: 10px;
-
   margin-top: 12px;
 }
 
@@ -342,91 +322,248 @@ body {
   background-color: #FFF8D6;
 }
 
+/* Desktop layout tweaks */
+@media (min-width: 992px) {
+  .profile-wrapper {
+    margin-right: -80px;
+  }
+
+  .equal-height {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .center-to-image {
+    display: flex;
+    align-items: center;
+  }
+}
 
 
 /* =========================================================
-   PROJECT SECTIONS
+   PROJECT GRID
 ========================================================= */
 
-.project-box {
-  background-color: rgba(51, 33, 28, 0.8);
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card .card {
+  height: 100%;
+  background-color: rgba(51, 33, 28, 0.85);
+
   border: 5px solid #000;
-  border-radius: 20px;
+  border-radius: 40px;
+  overflow: hidden;
 
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+}
+
+.project-card img {
   width: 100%;
-  padding: 30px;
-  box-sizing: border-box;
-  margin-top: 50px;
+  height: 400px;
+  object-fit: cover;
+
+  border-bottom: 5px solid #000;
 }
 
-.project-content {
-  padding: 20px;
+.project-card .card-body {
+  padding: 1.8rem;
+  color: #FFF8D6;
 }
 
-/* TOPIC HEADER */
+.project-card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0.3rem;
+}
 
-.topic-header {
+.project-card .card-subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.project-card .card-text {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* =========================================================
+   PROJECT MODAL
+========================================================= */
+
+.project-modal {
+  background-color: rgba(51, 33, 28, 0.95);
+  color: #FFF8D6;
+
+  border: 5px solid #000;
+  border-radius: 40px;
+}
+
+/* Header */
+.project-modal .modal-header {
+  background-color: rgba(30, 18, 14, 0.95);
+  border-bottom: 5px solid #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.project-modal .modal-title {
+  font-family: "Knewave", cursive;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #FFF8D6;
+}
+
+.project-modal .btn-close {
+  position: absolute;
+  right: 1.5rem;
+}
+
+/* Body spacing */
+.project-modal .modal-body {
+  padding: 2.5rem;
+}
+
+/* Modal sizing (80% viewport feel) */
+.modal-xl {
+  max-width: 80vw;
+}
+
+/* Ensure images behave */
+.project-modal img {
+  border: 5px solid #000;
+}
+
+.modal-main-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+/* Thumbnails container */
+.modal-thumbs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-thumbs img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+
+  border-radius: 12px;
+  border: 3px solid #000;
+  cursor: pointer;
+
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-thumbs img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   ACTIVITIES CAROUSEL
+========================================================= */
+
+.activities-carousel-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
 }
 
-.topic-text {
-  margin-left: 60px; /* controls indentation */
-  margin-top: 50px;
-}
-
-.topic-number {
-  font-family: "Knewave", cursive;
-  font-size: 96px;
-  line-height: 1;
-
-  color: #FFF8D6;
-  width: 220px;
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.topic-title {
-  font-weight: 700;
-  font-size: 2rem;
-  color: #FFF8D6;
-}
-
-.topic-short-desc {
-  font-size: 1rem;
-  color: #FFF8D6;
-  margin-bottom: 2rem;
-}
-
-/* CONTENT */
-
-.topic-featured p {
-  font-size: 14px;
-  color: #FFF8D6;
-  margin-bottom: 0.5rem;
-}
-
-/* IMAGES */
-
-.img-wrapper {
+.activities-carousel {
   display: flex;
-  align-items: flex-start;
+  gap: 24px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  padding: 1rem;
 }
 
-.featured-img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-
-  border-radius: 40px;
+/* Activity Card */
+.activity-card {
+  min-width: 280px;
+  background-color: rgba(51, 33, 28, 0.85);
   border: 5px solid #000;
+  border-radius: 32px;
+
+  padding: 1.2rem;
+  color: #FFF8D6;
+  text-align: center;
+
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-.topic-thumb {
+.activity-card:hover {
+  transform: translateY(-6px);
+}
+
+.activity-card img {
   width: 100%;
-  height: 300px;
+  height: 240px;
   object-fit: cover;
 
-  border-radius: 10px;
-  display: block;
+  border-radius: 20px;
+  border: 4px solid #000;
+  margin-bottom: 1rem;
+}
+
+.activity-card h6 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.activity-card p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  background-color: rgba(30, 18, 14, 0.95);
+  color: #FFF8D6;
+  border: 4px solid #000;
+  border-radius: 50%;
+
+  width: 48px;
+  height: 48px;
+
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn.left {
+  margin-right: 12px;
+}
+
+.carousel-btn.right {
+  margin-left: 12px;
 }
