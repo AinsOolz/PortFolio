@@ -24,7 +24,6 @@ body {
 
 #projects {
   scroll-margin-top: 100px;
-  /* same height as your navbar */
 }
 
 .custom-BG {
@@ -34,7 +33,7 @@ body {
 .container-fluid {
   position: relative;
   width: 100%;
-  min-height: 80px;
+  min-height: 85px;
   padding: 0 2rem 1rem;
 
   display: flex;
