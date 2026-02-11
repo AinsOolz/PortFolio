@@ -123,3 +123,37 @@ if (activitiesCarousel && prevBtn && nextBtn) {
     activitiesCarousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   });
 }
+
+/* =========================================================
+    Navbar Scroll Effect
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const navLinks = document.querySelectorAll(".nav-link");
+  const navbar = document.querySelector(".navbar");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        const navbarHeight = navbar.offsetHeight;
+
+        const sectionPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = sectionPosition - navbarHeight - 20; 
+        // extra 20px breathing space (adjust if needed)
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+
+});
+

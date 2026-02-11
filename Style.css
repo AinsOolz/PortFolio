@@ -8,9 +8,21 @@ html {
 
 body {
   font-family: "Libre Baskerville", serif;
-  color: #FFF8D6;
+  color: var(--accent);
 
   background: url("Image/CafeBG.png") center / 100% 100% no-repeat fixed;
+}
+
+:root {
+  --accent: #FFF8D6;
+  --bg-opaque: rgba(51, 33, 28, 1);
+  --bg-95: rgba(51, 33, 28, 0.95);
+  --bg-85: rgba(51, 33, 28, 0.85);
+  --bg-75: rgba(51, 33, 28, 0.75);
+  --muted-accent: rgba(255,248,214,0.4);
+  --border-color: #000;
+  --border-width: 5px;
+  --rounded-lg: 40px;
 }
 
 
@@ -58,7 +70,7 @@ body {
 
 /* Nav links */
 .navbar .nav-link {
-  color: #FFF8D6;
+  color: var(--accent);
   padding: 0.5rem 1rem;
   text-align: center;
 
@@ -76,7 +88,7 @@ body {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: #FFF8D6;
+  background-color: var(--accent);
   transition: width 0.3s ease;
 }
 
@@ -166,7 +178,7 @@ body {
   z-index: 1;
 
   background-color: rgba(51, 33, 28, 0.8);
-  border: 5px solid #000;
+  border: var(--border-width) solid var(--border-color);
   padding: 3rem;
 }
 
@@ -206,14 +218,14 @@ body {
 
 .vert-box,
 .horz-box {
-  border: 5px solid #000;
-  color: #FFF8D6;
+  border: var(--border-width) solid var(--border-color);
+  color: var(--accent);
   display: flex;
   flex-direction: column;
 }
 
 .vert-box {
-  background-color: rgba(51, 33, 28, 1);
+  background-color: var(--bg-opaque);
   position: relative;
   z-index: 5;
 }
@@ -248,7 +260,7 @@ body {
 }
 
 .horz-box {
-  background-color: rgba(51, 33, 28, 0.75);
+  background-color: var(--bg-75);
   justify-content: center;
   flex: 1;
 }
@@ -289,8 +301,8 @@ body {
   opacity: 0;
   transition: opacity 0.4s ease;
 
-  border-radius: 40px;
-  border: 5px solid #000;
+  border-radius: var(--rounded-lg);
+  border: var(--border-width) solid var(--border-color);
 }
 
 .profile-slide.active {
@@ -312,13 +324,13 @@ body {
 
   border-radius: 50%;
   border: 2px solid #000;
-  background-color: rgba(255, 248, 214, 0.4);
+  background-color: var(--muted-accent);
 
   cursor: pointer;
 }
 
 .carousel-dots .dot.active {
-  background-color: #FFF8D6;
+  background-color: var(--accent);
 }
 
 /* Desktop layout tweaks */
@@ -352,9 +364,9 @@ body {
 
 .cert-btn {
   background-color: rgba(51, 33, 28, 0.9);
-  color: #FFF8D6;
+  color: var(--accent);
 
-  border: 4px solid #000;
+  border: 4px solid var(--border-color);
   border-radius: 999px; /* fully curved ends */
 
   padding: 0.75rem 1.8rem;
@@ -384,10 +396,10 @@ body {
 
 .project-card .card {
   height: 100%;
-  background-color: rgba(51, 33, 28, 0.85);
+  background-color: var(--bg-85);
 
-  border: 5px solid #000;
-  border-radius: 40px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--rounded-lg);
   overflow: hidden;
 
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -403,12 +415,12 @@ body {
   height: 400px;
   object-fit: cover;
 
-  border-bottom: 5px solid #000;
+  border-bottom: var(--border-width) solid var(--border-color);
 }
 
 .project-card .card-body {
   padding: 1.8rem;
-  color: #FFF8D6;
+  color: var(--accent);
 }
 
 .project-card .card-title {
@@ -435,17 +447,17 @@ body {
 ========================================================= */
 
 .project-modal {
-  background-color: rgba(51, 33, 28, 0.95);
-  color: #FFF8D6;
+  background-color: var(--bg-95);
+  color: var(--accent);
 
-  border: 5px solid #000;
-  border-radius: 40px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--rounded-lg);
 }
 
 /* Header */
 .project-modal .modal-header {
   background-color: rgba(30, 18, 14, 0.95);
-  border-bottom: 5px solid #000;
+  border-bottom: var(--border-width) solid var(--border-color);
 
   display: flex;
   justify-content: center;
@@ -459,7 +471,7 @@ body {
   font-size: 28px;
   letter-spacing: 2px;
   text-align: center;
-  color: #FFF8D6;
+  color: var(--accent);
 }
 
 .project-modal .btn-close {
@@ -479,7 +491,7 @@ body {
 
 /* Ensure images behave */
 .project-modal img {
-  border: 5px solid #000;
+  border: var(--border-width) solid var(--border-color);
 }
 
 .modal-main-img {
@@ -501,7 +513,7 @@ body {
   object-fit: cover;
 
   border-radius: 12px;
-  border: 3px solid #000;
+  border: 3px solid var(--border-color);
   cursor: pointer;
 
   opacity: 0.7;
@@ -513,6 +525,21 @@ body {
   transform: scale(1.05);
 }
 
+.cert-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
+
+.cert-img {
+  width: 45%;
+  max-width: 320px;
+  border-radius: 20px;
+  border: var(--border-width) solid var(--border-color);
+  object-fit: contain;
+}
 /* =========================================================
    ACTIVITIES CAROUSEL
 ========================================================= */
@@ -535,12 +562,12 @@ body {
 /* Activity Card */
 .activity-card {
   min-width: 280px;
-  background-color: rgba(51, 33, 28, 0.85);
-  border: 5px solid #000;
+  background-color: var(--bg-85);
+  border: var(--border-width) solid var(--border-color);
   border-radius: 32px;
 
   padding: 1.2rem;
-  color: #FFF8D6;
+  color: var(--accent);
   text-align: center;
 
   flex-shrink: 0;
@@ -557,7 +584,7 @@ body {
   object-fit: cover;
 
   border-radius: 20px;
-  border: 4px solid #000;
+  border: 4px solid var(--border-color);
   margin-bottom: 1rem;
 }
 
@@ -575,8 +602,8 @@ body {
 /* Carousel Buttons */
 .carousel-btn {
   background-color: rgba(30, 18, 14, 0.95);
-  color: #FFF8D6;
-  border: 4px solid #000;
+  color: var(--accent);
+  border: 4px solid var(--border-color);
   border-radius: 50%;
 
   width: 48px;
