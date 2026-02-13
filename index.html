@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="scripts.js" defer></script>
 
 <head>
   <meta charset="UTF-8" />
@@ -18,6 +17,8 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="Style.css">
+
+  <script src="scripts.js" defer></script>
 </head>
 
 <!-- ================= MODAL FOR PROJECT SECTIONS ================= -->
@@ -217,7 +218,7 @@
 
       <!-- HEADER -->
       <div class="modal-header">
-        <h5 class="modal-title">Steps into Mobile Development</h5>
+        <h5 class="modal-title">World Wild Web</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
 
@@ -229,15 +230,15 @@
           <div class="col-lg-6">
 
             <!-- Main Image -->
-            <img src="./Image/Mob01.png" id="mobMainImg" class="img-fluid rounded-4 border border-dark modal-main-img"
-              alt="Mobile App Project preview">
+            <img src="./Image/Web01.png" id="webMainImg" class="img-fluid rounded-4 border border-dark modal-main-img"
+              alt="Web App Project preview">
 
             <!-- Thumbnails -->
             <div class="modal-thumbs mt-3">
-              <img src="./Image/Mob01.png" data-target="mobMainImg" alt="">
-              <img src="./Image/Mob02.png" data-target="mobMainImg" alt="">
-              <img src="./Image/Mob03.png" data-target="mobMainImg" alt="">
-              <img src="./Image/Mob04.png" data-target="mobMainImg" alt="">
+              <img src="./Image/Web01.png" data-target="webMainImg" alt="">
+              <img src="./Image/Web02.png" data-target="webMainImg" alt="">
+              <img src="./Image/Web03.png" data-target="webMainImg" alt="">
+              <img src="./Image/Web04.png" data-target="webMainImg" alt="">
             </div>
 
           </div>
@@ -263,6 +264,10 @@
               <li>Exposure to different app concepts including tracking tools, quizzes, and 3D catalogues</li>
               <li>Strengthened understanding of mobile UI design and programming fundamentals</li>
             </ul>
+
+            <a href="https://c219-web-app-ca2-7mna.onrender.com/" target="_blank" class="project-link mt-3">
+              Visit Project Website
+            </a>
 
           </div>
 
@@ -526,8 +531,36 @@
 
   <!-- ================= PROJECT GRID ================= -->
   <section id="projects" class="container py-5">
-    <div class="row g-4">
+    <!-- FEATURED PROJECT -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="project-card featured-project" data-bs-toggle="modal" data-bs-target="#projectFeatured">
 
+          <div class="card h-100">
+
+            <!-- Video Container -->
+            <div class="featured-video-wrapper">
+              <iframe src="https://www.youtube.com/embed/TyCOf5I8wcc" title="Featured Project Video" frameborder="0"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="card-body text-center">
+              <h5 class="card-title">A Collection of My Personal Projects</h5>
+              <p class="card-subtitle">FEATURED PROJECT</p>
+              <p class="card-text">
+                A showcase of my personal works and projects outside of my academic curriculum, highlighting my skills
+                and creativity.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row g-4">
       <!-- CARD 01 -->
       <div class="col-md-6">
         <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectTravelly">
@@ -580,12 +613,12 @@
       <div class="col-md-6">
         <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectMobileApp">
           <div class="card h-100">
-            <img src="./Image/Mob01.png" class="card-img-top" alt="Mobile App">
+            <img src="./Image/Web01.png" class="card-img-top" alt="Web App">
             <div class="card-body">
-              <h5 class="card-title">Steps into Mobile Development</h5>
-              <p class="card-subtitle">MOBILE APP DEVELOPMENT</p>
+              <h5 class="card-title">World Wild Web</h5>
+              <p class="card-subtitle">WEB APP DEVELOPMENT</p>
               <p class="card-text">
-                A series of mobile applications exploring UI, logic, and cross-platform concepts.
+                A look into my Web App Project developed as a team for my Exam (CA2) in RP.
               </p>
             </div>
           </div>
